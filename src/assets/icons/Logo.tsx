@@ -19,9 +19,11 @@ const Logo = () => {
         clipRule="evenodd"
         d="M94 78C115.539 78 133 60.5391 133 39C133 17.4609 115.539 0 94 0C72.4609 0 55 17.4609 55 39C55 60.5391 72.4609 78 94 78Z"
         fill="#2FBCF7"
+        style={{ mixBlendMode: "multiply" }}
       />
       <mask
         id="mask0_0_866"
+        style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="27"
         y="20"
@@ -44,6 +46,7 @@ const Logo = () => {
       </g>
       <mask
         id="mask1_0_866"
+        style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="79"
         y="20"
