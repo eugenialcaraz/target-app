@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../../assets/icons/Icon";
-import SignUp from "./signIn/SignIn";
+import SignIn from "./signIn/SignIn";
 import Phone from "../../assets/images/i6.png";
 import Play from "../../assets/images/play.png";
 
@@ -15,7 +15,7 @@ const LandingContainer = () => {
         </button>
         <div className={styles.contentContainer}>
           <Icon name="logo" />
-          <SignUp />
+          <SignIn />
         </div>
       </div>
       <div className={styles.rightContainer}>
@@ -27,6 +27,19 @@ const LandingContainer = () => {
         <button className={styles.playIconContainer} tabIndex={0}>
           <img src={Play} alt="Play icon" />
         </button>
+        <div className={`${styles.contentContainer} ${styles.rightContent}`}>
+          <a href="!#">
+            <Icon name="apple" />
+          </a>
+          <div className={styles.socialMediaContainer}>
+            <a href="!#">
+              <Icon name="facebook" />
+            </a>
+            <a href="!#">
+              <Icon name="twitter" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

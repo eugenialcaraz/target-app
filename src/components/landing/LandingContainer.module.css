@@ -38,11 +38,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 82vh;
+  height: 85vh;
+}
+
+.contentContainer .right {
+  align-items: flex-end;
 }
 
 .contentContainer svg {
   min-height: 5.6rem;
+}
+.rightContent svg {
+  min-height: auto;
+}
+
+.rightContent {
+  justify-content: flex-end;
+  height: 90vh;
 }
 
 .phoneImage {
@@ -63,4 +75,14 @@
 .playIconContainer img {
   max-width: 52px;
   width: 100%;
+}
+
+.socialMediaContainer {
+  margin-top: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialMediaContainer a:first-child {
+  margin-right: 1.1rem;
 }

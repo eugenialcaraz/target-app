@@ -1,6 +1,9 @@
 import React, { FC } from "react";
-import Menu from "./Menu";
+import Apple from "./Apple";
+import Facebook from "./Facebook";
 import Logo from "./Logo";
+import Menu from "./Menu";
+import Twitter from "./Twitter";
 
 type IconProps = {
   name: string;
@@ -8,10 +11,21 @@ type IconProps = {
 
 const Icon: FC<IconProps> = ({ name }) => {
   switch (name) {
-    case "menu":
-      return <Menu />;
+    case "apple":
+      return <Apple />;
+
+    case "facebook":
+      return <Facebook />;
+
     case "logo":
       return <Logo />;
+
+    case "menu":
+      return <Menu />;
+
+    case "twitter":
+      return <Twitter />;
+
     default:
       return <></>;
   }
