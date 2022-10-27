@@ -1,0 +1,10 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUp {
+  width: 13.4rem;
+  height: 2.64rem;
+  margin-bottom: 1.57rem;
+}

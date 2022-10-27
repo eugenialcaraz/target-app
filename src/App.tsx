@@ -1,10 +1,10 @@
+import React from 'react'
+import Landing from "./components/landing/LandingContainer.js"
 
-function App() {
-
+const App = () => {
   return (
-    <div >
-      Login will be here
-    </div>
+    /*Private routing will be added once main screen is done*/
+   <Landing/>
   )
 }
 
