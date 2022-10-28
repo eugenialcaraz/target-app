@@ -1,11 +1,11 @@
-import React from 'react'
-import Landing from "./components/landing/LandingContainer.js"
+import React from "react";
+import Landing from "@/pages/landing/LandingContainer.js";
 
 const App = () => {
   return (
     /*Private routing will be added once main screen is done*/
-   <Landing/>
-  )
-}
+    <Landing />
+  );
+};
 
-export default App
+export default App;

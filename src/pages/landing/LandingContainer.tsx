@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "@assets/icons/Icon";
-import SignIn from "./signIn/SignIn";
+import SignIn from "@components/landing/signIn/SignIn";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
 

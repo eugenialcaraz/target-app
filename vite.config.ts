@@ -11,6 +11,9 @@ export default defineConfig({
       "@common/": fileURLToPath(
         new URL("./src/components/common/", import.meta.url)
       ),
+      "@components/": fileURLToPath(
+        new URL("./src/components/", import.meta.url)
+      ),
       "@assets/": fileURLToPath(new URL("./src/assets/", import.meta.url)),
     },
   },
