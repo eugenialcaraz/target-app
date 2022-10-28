@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "../../common/input/Input";
-import Button from "../../common/button/Button";
+import Input from "@common/input/Input";
+import Button from "@common/button/Button";
 import styles from "./SignIn.module.css";
 
 const SignUp = () => {
