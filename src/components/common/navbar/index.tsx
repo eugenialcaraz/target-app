@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from "@components/common";
 import {
   openMenu,
@@ -6,7 +6,7 @@ import {
   setActiveLink,
 } from "@/state/features/menu/menuSlice";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 
 import styles from "./Navbar.module.css";
@@ -14,6 +14,8 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const { menuOpen, activeLink } = useAppSelector((state) => state.menu);
+
+  const location = useLocation();
 
   const handleMenu = (status: boolean) => {
     status ? dispatch(openMenu()) : dispatch(closeMenu());
@@ -29,6 +31,12 @@ const Navbar = () => {
     //I'm not including "Contact" here as it's a Modal and it's not supposed to change url path
     //However, array structure is made in case more links are needed in the future
   ];
+
+  useEffect(() => {
+    location.pathname === "/about" &&
+      activeLink !== "/about" &&
+      dispatch(setActiveLink("About"));
+  }, []);
 
   return (
     <>
