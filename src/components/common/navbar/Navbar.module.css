@@ -1,0 +1,52 @@
+.iconContainer {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.5rem;
+  left: 2.2rem;
+  top: 2.8rem;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+}
+
+.menu {
+  position: absolute;
+  padding: 0.5rem;
+  left: 5rem;
+  top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 1.2s ease;
+}
+
+.menu a {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.21rem;
+  margin-bottom: 0.3rem;
+  transition: all 0.4s ease;
+}
+
+.menu a:hover,
+.menu a:focus,
+.activeLink {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.menuOpen {
+  width: 100%;
+}
+
+.menuClosed {
+  width: 0px;
+}
+
+.menuClosed a {
+  display: none;
+}

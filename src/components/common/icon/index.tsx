@@ -1,9 +1,10 @@
 import React, { FC, ReactNode } from "react";
-import Apple from "../../../assets/icons/Apple";
-import Facebook from "../../../assets/icons/Facebook";
-import Logo from "../../../assets/icons/Logo";
-import Menu from "../../../assets/icons/Menu";
-import Twitter from "../../../assets/icons/Twitter";
+import Apple from "@assets/icons/Apple";
+import Facebook from "@assets/icons/Facebook";
+import Logo from "@assets/icons/Logo";
+import Menu from "@assets/icons/Menu";
+import Twitter from "@assets/icons/Twitter";
+import Close from "@assets/icons/Close";
 
 type IconProps = {
   name: string;
@@ -13,6 +14,7 @@ interface iconObject {
 }
 const icons: iconObject = {
   apple: <Apple />,
+  close: <Close />,
   facebook: <Facebook />,
   logo: <Logo />,
   menu: <Menu />,
