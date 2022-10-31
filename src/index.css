@@ -1,0 +1,96 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #2fbcf7;
+  --disabled: #a6a6a6;
+  --shadowColor: rgba(0, 0, 0, 0.25);
+  --shadow: drop-shadow(0px 2px 4px var(--shadowColor));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 0.5px solid transparent;
+  transition: all 0.7s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary);
+}
+
+a:visited {
+  color: var(--black);
+}
+
+input {
+  border: 0.5px solid var(--black);
+  padding: 1rem;
+}
+
+label,
+input[type="button"],
+input[type="submit"] {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  text-align: center;
+  letter-spacing: 0.165rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+label {
+  margin-bottom: 0.4rem;
+}
+
+input[type="button"],
+input[type="submit"] {
+  background-color: var(--black);
+  color: var(--white);
+  filter: var(--shadow);
+  border: none;
+  width: 18.5rem;
+  height: 3.7rem;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--primary);
+  color: var(--black);
+}

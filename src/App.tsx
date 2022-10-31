@@ -1,11 +1,11 @@
+import React from "react";
+import Landing from "@landing";
 
-function App() {
-
+const App = () => {
   return (
-    <div >
-      Login will be here
-    </div>
-  )
-}
+    /*Private routing will be added once main screen is done*/
+    <Landing />
+  );
+};
 
-export default App
+export default App;

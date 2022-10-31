@@ -1,0 +1,10 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn {
+  width: 18.8rem;
+  height: 3.7rem;
+  margin-bottom: 2.4rem;
+}

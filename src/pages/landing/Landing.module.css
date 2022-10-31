@@ -1,0 +1,88 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+.leftContainer,
+.rightContainer {
+  width: 50%;
+  position: relative;
+  height: inherit;
+}
+
+.rightContainer {
+  background-color: var(--primary);
+}
+
+.iconContainer {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.5rem;
+  left: 2.2rem;
+  top: 2.8rem;
+}
+
+.iconContainer,
+.playIconContainer {
+  border: none;
+  background-color: transparent;
+}
+
+.contentContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85vh;
+}
+
+.contentContainer .right {
+  align-items: flex-end;
+}
+
+.contentContainer svg {
+  min-height: 7.8rem;
+}
+.rightContent svg {
+  min-height: auto;
+}
+
+.rightContent {
+  justify-content: flex-end;
+  height: 90vh;
+}
+
+.phoneImage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54.5%);
+  max-width: 550px;
+}
+
+.playIconContainer {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+}
+
+.playIconContainer img {
+  max-width: 52px;
+  width: 100%;
+}
+
+.socialMediaContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialMediaContainer a:first-child {
+  margin-right: 1.5rem;
+}
