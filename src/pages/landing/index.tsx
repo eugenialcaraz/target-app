@@ -1,8 +1,10 @@
 import React from "react";
-import { SignIn, About } from "@components/index";
+
 import { Icon, Navbar } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
+
+import { Outlet } from "react-router-dom";
 
 import { openMenu, closeMenu } from "@/state/features/menu/menuSlice";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
@@ -23,8 +25,7 @@ const Landing = () => {
         <Navbar />
         <div className={styles.contentContainer}>
           <Icon name="logo" />
-          {/* <SignIn /> */}
-          <About />
+          <Outlet />
         </div>
       </div>
       <div className={styles.rightContainer}>

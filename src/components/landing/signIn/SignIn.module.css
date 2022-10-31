@@ -18,6 +18,7 @@
 
 .welcomeContainer p {
   text-align: justify;
+  max-width: 32.1rem;
 }
 
 .form {

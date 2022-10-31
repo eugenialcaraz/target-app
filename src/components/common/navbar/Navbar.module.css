@@ -23,17 +23,23 @@
   transition: all 1.2s ease;
 }
 
-.menu a {
+.menu a,
+.menu button {
   font-size: 1.4rem;
   line-height: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.21rem;
   margin-bottom: 0.3rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   transition: all 0.4s ease;
 }
 
 .menu a:hover,
 .menu a:focus,
+.menu button:hover,
+.menu button:focus,
 .activeLink {
   font-weight: 600;
   color: var(--black);
@@ -47,6 +53,7 @@
   width: 0px;
 }
 
-.menuClosed a {
+.menuClosed a,
+.menuClosed button {
   display: none;
 }
