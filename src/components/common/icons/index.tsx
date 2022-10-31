@@ -21,4 +21,4 @@ const icons: iconObject = {
 
 const Icon: FC<IconProps> = ({ name }) => <>{icons[name]}</>;
 
-export default Icon;
+export { Icon };

@@ -1,6 +1,7 @@
 import React from "react";
-import Input from "@common/input";
-import Button from "@common/button";
+
+import { Button, Input } from "@components/common";
+
 import styles from "./SignIn.module.css";
 
 const SignIn = () => {
@@ -36,4 +37,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export { SignIn };
