@@ -3,16 +3,14 @@ import styles from "./Input.module.css";
 
 type InputProps = {
   label: string;
-  inputType: string;
+  stylesName: string;
 };
 
-const Input: FC<InputProps> = ({ label, inputType }) => {
-  return (
-    <div className={styles.inputContainer}>
-      <label htmlFor={label}>{label}</label>
-      <input className={styles[inputType]} id={label} />
-    </div>
-  );
-};
+const Input: FC<InputProps> = ({ label, stylesName }) => (
+  <div className={styles.inputContainer}>
+    <label htmlFor={label}>{label}</label>
+    <input className={styles[stylesName]} id={label} />
+  </div>
+);
 
 export default Input;

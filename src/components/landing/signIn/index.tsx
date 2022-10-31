@@ -16,9 +16,9 @@ const SignIn = () => {
         </p>
       </div>
       <form className={styles.form}>
-        <Input label="email" inputType="signIn" />
-        <Input label="password" inputType="signIn" />
-        <Button buttonType="submit" value="sign in" />
+        <Input label="email" stylesName="signIn" />
+        <Input label="password" stylesName="signIn" />
+        <Button type="submit" value="sign in" />
         <a className={styles.forgotPassword} href="!#">
           Forgot your password?
         </a>
