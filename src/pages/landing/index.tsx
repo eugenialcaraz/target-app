@@ -1,10 +1,10 @@
 import React from "react";
-import Icon from "@assets/icons/Icon";
-import SignIn from "@components/landing/signIn/SignIn";
+import Icon from "@common/icons";
+import SignIn from "@components/landing/signIn";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
 
-import styles from "./LandingContainer.module.css";
+import styles from "./Landing.module.css";
 
 const LandingContainer = () => {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
-import Input from "@common/input/Input";
-import Button from "@common/button/Button";
+import Input from "@common/input";
+import Button from "@common/button";
 import styles from "./SignIn.module.css";
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <div className={styles.container}>
       <div className={styles.welcomeContainer}>
@@ -16,8 +16,8 @@ const SignUp = () => {
         </p>
       </div>
       <form className={styles.form}>
-        <Input label="email" inputType="signUp" />
-        <Input label="password" inputType="signUp" />
+        <Input label="email" inputType="signIp" />
+        <Input label="password" inputType="signIp" />
         <Button buttonType="submit" value="sign in" />
         <a className={styles.forgotPassword} href="!#">
           Forgot your password?
@@ -36,4 +36,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

@@ -20,8 +20,8 @@
   cursor: pointer;
   position: absolute;
   padding: 0.5rem;
-  left: 1rem;
-  top: 1.5rem;
+  left: 2.2rem;
+  top: 2.8rem;
 }
 
 .iconContainer,
@@ -46,7 +46,7 @@
 }
 
 .contentContainer svg {
-  min-height: 5.6rem;
+  min-height: 7.8rem;
 }
 .rightContent svg {
   min-height: auto;
@@ -78,11 +78,11 @@
 }
 
 .socialMediaContainer {
-  margin-top: 1.1rem;
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .socialMediaContainer a:first-child {
-  margin-right: 1.1rem;
+  margin-right: 1.5rem;
 }

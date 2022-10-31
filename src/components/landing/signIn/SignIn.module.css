@@ -7,13 +7,13 @@
 }
 .welcomeContainer {
   text-align: center;
-  min-width: 23rem;
+  min-width: 32.1rem;
   align-self: flex-start;
 }
 
 .welcomeContainer h1 {
-  letter-spacing: 0.2rem;
-  margin: 1.15rem 0 1rem 0;
+  letter-spacing: 0.3rem;
+  margin: 1.6rem 0 1.3rem 0;
 }
 
 .welcomeContainer p {
@@ -28,12 +28,12 @@
 
 .forgotPassword,
 .signUp {
-  font-size: 0.79rem;
-  line-height: 0.93rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 500;
   text-align: center;
-  padding: 0.2rem;
-  margin-top: 1rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 .bottomLinks {
@@ -43,24 +43,22 @@
 }
 
 .facebookLogin {
-  font-size: 0.86rem;
-  line-height: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   text-align: center;
-  letter-spacing: 0.17rem;
+  letter-spacing: 0.24rem;
   text-transform: uppercase;
   font-weight: 700;
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .divider {
   border-bottom: 0.5px solid var(--black);
-  height: 0.5rem;
-  margin-bottom: 0.5rem;
-  width: 8.6rem;
+  height: 1rem;
+  width: 12.1rem;
 }
 
 .signUp {
-  margin-top: 0;
   text-transform: uppercase;
-  letter-spacing: 0.11rem;
+  letter-spacing: 0.165rem;
 }

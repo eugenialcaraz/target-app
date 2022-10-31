@@ -16,7 +16,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 body {
@@ -25,19 +25,19 @@ body {
 }
 
 h1 {
-  font-size: 1.4rem;
-  line-height: 1.6rem;
+  font-size: 2rem;
+  line-height: 2.3rem;
 }
 
 h2 {
-  font-size: 1.28rem;
-  line-height: 2.28rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
   font-weight: 500;
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.85rem;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
   font-weight: 400;
 }
 
@@ -65,16 +65,16 @@ input {
 label,
 input[type="button"],
 input[type="submit"] {
-  font-size: 0.78rem;
-  line-height: 0.92rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   text-align: center;
-  letter-spacing: 0.11rem;
+  letter-spacing: 0.165rem;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 label {
-  margin-bottom: 0.28rem;
+  margin-bottom: 0.4rem;
 }
 
 input[type="button"],
@@ -83,8 +83,8 @@ input[type="submit"] {
   color: var(--white);
   filter: var(--shadow);
   border: none;
-  width: 13.2rem;
-  height: 2.64rem;
+  width: 18.5rem;
+  height: 3.7rem;
   cursor: pointer;
   transition: all 0.7s ease;
 }
