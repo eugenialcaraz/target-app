@@ -1,12 +1,12 @@
 import React from "react";
-import Icon from "@common/icons";
-import SignIn from "@components/landing/signIn";
+import { SignIn } from "@components/index";
+import { Icon } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
 
 import styles from "./Landing.module.css";
 
-const LandingContainer = () => (
+const Landing = () => (
   <div className={styles.mainContainer}>
     <div className={styles.leftContainer}>
       <button className={styles.iconContainer} tabIndex={0}>
@@ -43,4 +43,4 @@ const LandingContainer = () => (
   </div>
 );
 
-export default LandingContainer;
+export { Landing };

@@ -17,11 +17,8 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@common/*": ["src/components/common/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@landing": ["src/pages/landing/index"],
-      "@main/*": ["src/pages/main/*"],
       "@/*": ["src/*"]
     }
   },

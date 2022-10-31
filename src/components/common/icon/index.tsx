@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from "react";
-import Apple from "./Apple";
-import Facebook from "./Facebook";
-import Logo from "./Logo";
-import Menu from "./Menu";
-import Twitter from "./Twitter";
+import Apple from "../../../assets/icons/Apple";
+import Facebook from "../../../assets/icons/Facebook";
+import Logo from "../../../assets/icons/Logo";
+import Menu from "../../../assets/icons/Menu";
+import Twitter from "../../../assets/icons/Twitter";
 
 type IconProps = {
   name: string;
@@ -21,4 +21,4 @@ const icons: iconObject = {
 
 const Icon: FC<IconProps> = ({ name }) => <>{icons[name]}</>;
 
-export default Icon;
+export { Icon };

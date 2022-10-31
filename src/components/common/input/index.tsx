@@ -13,4 +13,4 @@ const Input: FC<InputProps> = ({ label, stylesName }) => (
   </div>
 );
 
-export default Input;
+export { Input };
