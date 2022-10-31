@@ -70,7 +70,8 @@ input[type="submit"] {
   text-align: center;
   letter-spacing: 0.165rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
+  transition: all 0.7s ease;
 }
 
 label {

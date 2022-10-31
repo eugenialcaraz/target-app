@@ -1,5 +1,5 @@
 import React from "react";
-import { SignIn } from "@components/index";
+import { SignIn, About } from "@components/index";
 import { Icon, Navbar } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
@@ -23,7 +23,8 @@ const Landing = () => {
         <Navbar />
         <div className={styles.contentContainer}>
           <Icon name="logo" />
-          <SignIn />
+          {/* <SignIn /> */}
+          <About />
         </div>
       </div>
       <div className={styles.rightContainer}>
