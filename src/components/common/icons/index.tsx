@@ -19,8 +19,6 @@ const icons: iconObject = {
   twitter: <Twitter />,
 };
 
-const Icon: FC<IconProps> = ({ name }) => {
-  return <>{icons[name]}</>;
-};
+const Icon: FC<IconProps> = ({ name }) => <>{icons[name]}</>;
 
 export default Icon;
