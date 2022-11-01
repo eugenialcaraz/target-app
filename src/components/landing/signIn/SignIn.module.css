@@ -19,11 +19,6 @@
   max-width: 32.1rem;
 }
 
-.form {
-  justify-content: center;
-}
-
-.forgotPassword,
 .signUp {
   font-size: 1.1rem;
   line-height: 1.3rem;
@@ -31,6 +26,7 @@
   text-align: center;
   padding: 0.5rem;
   margin-top: 1.5rem;
+  letter-spacing: 0.165rem;
 }
 
 .bottomLinks {
@@ -50,8 +46,4 @@
   border-bottom: 0.5px solid var(--black);
   height: 1rem;
   width: 12.1rem;
-}
-
-.signUp {
-  letter-spacing: 0.165rem;
 }

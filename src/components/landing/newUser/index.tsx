@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { SignInForm } from "../signIn/signInForm";
+import { SignInForm } from "../../common/forms/SignInForm";
 
 import styles from "./NewUser.module.css";
 
