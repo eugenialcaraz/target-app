@@ -20,4 +20,4 @@ const Facebook = () => (
   </svg>
 );
 
-export default Facebook;
+export { Facebook };

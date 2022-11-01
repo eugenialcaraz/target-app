@@ -108,4 +108,4 @@ const Apple = () => (
   </svg>
 );
 
-export default Apple;
+export { Apple };

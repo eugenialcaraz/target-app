@@ -5,13 +5,13 @@ import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { handleMenu } from "@/state/features/menu/menuSlice";
 
 import { Icon } from "@components/common";
-import { NavigationLinks } from "./navigationLinks";
+import { Pages } from "@/pages/pages";
 import { urlFormat } from "@/utils/urlFormat";
 
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { href: `/${urlFormat(NavigationLinks.About)}`, name: NavigationLinks.About },
+  { href: `/${urlFormat(Pages.About)}`, name: Pages.About },
   //I'm not including "Contact" here as it's a Modal and it's not supposed to change url path
   //However, array structure is made in case more links are needed in the future
 ];
@@ -44,7 +44,7 @@ const Navbar = () => {
             {link.name}
           </Link>
         ))}
-        <button tabIndex={menuOpen ? 0 : -1}>{NavigationLinks.Contact}</button>
+        <button tabIndex={menuOpen ? 0 : -1}>{Pages.Contact}</button>
       </nav>
     </>
   );

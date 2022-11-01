@@ -16,4 +16,4 @@ const Close = () => (
   </svg>
 );
 
-export default Close;
+export { Close };

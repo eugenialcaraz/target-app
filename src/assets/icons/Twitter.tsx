@@ -19,4 +19,4 @@ const Twitter = () => (
   </svg>
 );
 
-export default Twitter;
+export { Twitter };
