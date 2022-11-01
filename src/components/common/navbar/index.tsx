@@ -36,7 +36,6 @@ const Navbar = () => {
     location.pathname === "/about" && activeLink !== "/about"
       ? dispatch(setActiveLink("About"))
       : dispatch(setActiveLink(""));
-    console.log(location.pathname);
   }, []);
 
   return (
