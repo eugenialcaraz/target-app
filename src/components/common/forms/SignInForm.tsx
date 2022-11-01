@@ -11,7 +11,13 @@ const SignInForm = () => {
     <form
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <Input label="email" stylesName="signIn" register={register} required />
+      <Input
+        label="email"
+        type="email"
+        stylesName="signIn"
+        register={register}
+        required
+      />
       <Input
         label="password"
         type="password"
