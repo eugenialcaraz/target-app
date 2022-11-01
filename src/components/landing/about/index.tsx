@@ -1,5 +1,8 @@
 import React from "react";
 import { Button } from "@components/common";
+
+import { Link } from "react-router-dom";
+
 import styles from "./About.module.css";
 
 const About = () => {
@@ -23,7 +26,9 @@ const About = () => {
         be fabulous for the rest of the day - checked!.
       </p>
 
-      <Button type="button" value="Get started!" />
+      <Link to="/sign-in">
+        <Button type="button" value="Get started!" />
+      </Link>
     </div>
   );
 };

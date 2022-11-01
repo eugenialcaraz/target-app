@@ -95,3 +95,19 @@ input[type="submit"]:hover {
   background-color: var(--primary);
   color: var(--black);
 }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

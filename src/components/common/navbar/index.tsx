@@ -33,9 +33,9 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    location.pathname === "/about" &&
-      activeLink !== "/about" &&
-      dispatch(setActiveLink("About"));
+    location.pathname === "/about" && activeLink !== "/about"
+      ? dispatch(setActiveLink("About"))
+      : dispatch(setActiveLink(""));
   }, []);
 
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
         {!menuOpen ? <Icon name="menu" /> : <Icon name="close" />}
       </button>
       <nav
-        className={`${styles.menu} ${
+        className={`${styles.menu} flex-column ${
           menuOpen ? styles.menuOpen : styles.menuClosed
         }`}>
         {navLinks.map((link) => (

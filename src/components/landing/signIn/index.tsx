@@ -4,7 +4,7 @@ import styles from "./SignIn.module.css";
 
 const SignIn = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} flex-column`}>
       <div className={styles.welcomeContainer}>
         <h1>TARGET MVD</h1>
         <h2>Find people near you & Connect</h2>
@@ -14,7 +14,7 @@ const SignIn = () => {
           interest.
         </p>
       </div>
-      <form className={styles.form}>
+      <form className={`${styles.form} flex-column`}>
         <Input label="email" stylesName="signIn" />
         <Input label="password" stylesName="signIn" />
         <Button type="submit" value="sign in" />
@@ -22,12 +22,12 @@ const SignIn = () => {
           Forgot your password?
         </a>
       </form>
-      <div className={styles.bottomLinks}>
-        <a className={styles.facebookLogin} href="!#">
+      <div className={`${styles.bottomLinks} flex-column`}>
+        <a className={`${styles.facebookLogin} uppercase`} href="!#">
           Connect with facebook
         </a>
         <div className={styles.divider}></div>
-        <a className={styles.signUp} href="!#">
+        <a className={`${styles.signUp} uppercase`} href="!#">
           Sign up
         </a>
       </div>

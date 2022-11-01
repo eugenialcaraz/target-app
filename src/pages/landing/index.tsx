@@ -32,7 +32,7 @@ const Landing = () => {
     <div className={styles.mainContainer}>
       <div className={styles.leftContainer}>
         <Navbar />
-        <div className={styles.contentContainer}>
+        <div className={`${styles.contentContainer} center flex-column`}>
           <Icon name="logo" />
           <Outlet />
         </div>
@@ -46,7 +46,8 @@ const Landing = () => {
         <button className={styles.playIconContainer} tabIndex={0}>
           <img src={Play} alt="Play icon" />
         </button>
-        <div className={`${styles.contentContainer} ${styles.rightContent}`}>
+        <div
+          className={`${styles.contentContainer} ${styles.rightContent} center flex-column`}>
           <a href="!#">
             <Icon name="apple" />
           </a>

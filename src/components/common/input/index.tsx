@@ -7,7 +7,7 @@ type InputProps = {
 };
 
 const Input: FC<InputProps> = ({ label, stylesName }) => (
-  <div className={styles.inputContainer}>
+  <div className={`${styles.inputContainer} flex-column`}>
     <label htmlFor={label}>{label}</label>
     <input className={styles[stylesName]} id={label} />
   </div>
