@@ -1,6 +1,9 @@
 import React from "react";
-import { Button, Input } from "@components/common";
+import { Link } from "react-router-dom";
 
+import { Button, Input } from "@components/common";
+import { urlFormat } from "@/utils/urlFormat";
+import { Pages } from "@/pages";
 import styles from "./SignIn.module.css";
 
 const SignIn = () => (
@@ -27,9 +30,11 @@ const SignIn = () => (
         Connect with facebook
       </a>
       <div className={styles.divider}></div>
-      <a className={`${styles.signUp} uppercase`} href="!#">
+      <Link
+        className={`${styles.signUp} uppercase`}
+        to={urlFormat(Pages.SignUp)}>
         Sign up
-      </a>
+      </Link>
     </div>
   </div>
 );

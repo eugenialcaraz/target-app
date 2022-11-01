@@ -1,5 +1,13 @@
+.inputContainer {
+  width: 100%;
+}
+
 .signIn {
   width: 18.8rem;
-  height: 3.7rem;
   margin-bottom: 2.4rem;
+}
+
+.signUp {
+  width: 18rem;
+  margin-bottom: 1.8rem;
 }
