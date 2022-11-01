@@ -2,10 +2,14 @@ import React from "react";
 import { Button } from "@components/common";
 
 import { Link } from "react-router-dom";
+import { setActiveLink } from "@/state/features/menu/menuSlice";
+import { useAppDispatch } from "@/state/app/hooks";
 
 import styles from "./About.module.css";
 
 const About = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.container}>
       <h1 className={styles.aboutHeader}>What’s TARGET?</h1>
@@ -26,7 +30,7 @@ const About = () => {
         be fabulous for the rest of the day - checked!.
       </p>
 
-      <Link to="/sign-in">
+      <Link to="/sign-in" onClick={() => dispatch(setActiveLink(""))}>
         <Button type="button" value="Get started!" />
       </Link>
     </div>
