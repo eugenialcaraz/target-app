@@ -10,8 +10,7 @@ import styles from "./SignUp.module.css";
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e: Event) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     //Logic of creating user
     navigate(urlFormat(Pages.EmailConfirmation));
   };
@@ -19,7 +18,7 @@ const SignUp = () => {
   return (
     <div className={`${styles.container} flex-column`}>
       <h1>SIGN UP</h1>
-      <form className={`${styles.form} flex-column`}>
+      <form className={`${styles.form} flex-column`} onSubmit={handleSubmit}>
         <Input label="name" stylesName="signUp" />
         <Input label="email" stylesName="signUp" />
         <Input

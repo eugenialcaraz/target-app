@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { About, SignIn, SignUp } from "@components/index";
 import { Landing, Pages } from "./pages";
-
 import { urlFormat } from "./utils/urlFormat";
 
 const App = () => (
