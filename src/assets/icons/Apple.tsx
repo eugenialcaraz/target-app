@@ -6,7 +6,10 @@ const Apple = () => (
     height="38"
     viewBox="0 0 120 38"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="iconTitle"
+    role="img">
+    <title id="iconTitle">Download on the App Store</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -105,4 +108,4 @@ const Apple = () => (
   </svg>
 );
 
-export default Apple;
+export { Apple };

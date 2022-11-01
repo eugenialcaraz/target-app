@@ -70,7 +70,8 @@ input[type="submit"] {
   text-align: center;
   letter-spacing: 0.165rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
+  transition: all 0.7s ease;
 }
 
 label {
@@ -93,4 +94,20 @@ input[type="button"]:hover,
 input[type="submit"]:hover {
   background-color: var(--primary);
   color: var(--black);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

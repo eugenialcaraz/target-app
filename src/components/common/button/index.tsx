@@ -9,4 +9,4 @@ const Button: FC<ButtonProps> = ({ value, type }) => (
   <input type={type} value={value} />
 );
 
-export default Button;
+export { Button };

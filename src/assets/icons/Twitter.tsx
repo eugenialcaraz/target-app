@@ -6,7 +6,10 @@ const Twitter = () => (
     height="26"
     viewBox="0 0 27 26"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="iconTitle"
+    role="img">
+    <title id="iconTitle">Target MVD on Twitter</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -16,4 +19,4 @@ const Twitter = () => (
   </svg>
 );
 
-export default Twitter;
+export { Twitter };

@@ -1,6 +1,4 @@
 .container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   flex: 1;
@@ -18,11 +16,10 @@
 
 .welcomeContainer p {
   text-align: justify;
+  max-width: 32.1rem;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -37,8 +34,6 @@
 }
 
 .bottomLinks {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -47,7 +42,6 @@
   line-height: 1.4rem;
   text-align: center;
   letter-spacing: 0.24rem;
-  text-transform: uppercase;
   font-weight: 700;
   padding: 0.5rem;
 }
@@ -59,6 +53,5 @@
 }
 
 .signUp {
-  text-transform: uppercase;
   letter-spacing: 0.165rem;
 }
