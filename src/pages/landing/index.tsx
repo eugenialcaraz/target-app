@@ -7,6 +7,8 @@ import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { Icon, Navbar } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
+import { urlFormat } from "@/utils/urlFormat";
+import { Pages } from "../pages";
 
 import styles from "./Landing.module.css";
 
@@ -19,7 +21,7 @@ const Landing = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      navigate("/sign-in");
+      navigate(urlFormat(Pages.SignIn));
     }
   }, []);
 
@@ -56,12 +58,10 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      {menuOpen ? (
+      {menuOpen && (
         <div
           className={styles.overlay}
           onClick={() => dispatch(handleMenu(false))}></div>
-      ) : (
-        <></>
       )}
     </div>
   );

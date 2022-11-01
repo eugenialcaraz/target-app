@@ -28,7 +28,7 @@ const Navbar = () => {
         className={styles.iconContainer}
         tabIndex={0}
         onClick={() => dispatch(handleMenu(!menuOpen))}>
-        {menuOpen ? <Icon name="close" /> : <Icon name="menu" />}
+        <Icon name={menuOpen ? "close" : "menu"} />
       </button>
       <nav
         className={`${styles.menu} flex-column ${
