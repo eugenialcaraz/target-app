@@ -15,10 +15,9 @@ const ContactForm = () => {
   } = useForm();
 
   const dispatch = useAppDispatch();
-  const formError = errors["email*"]?.type || errors["message*"]?.type;
+  const isFormValid = Object.keys(errors).length === 0;
 
   const onSubmit = (data: object) => {
-    //on submit logic
     dispatch(handleModalStatus(ModalStatus.Success));
   };
 
@@ -26,19 +25,19 @@ const ContactForm = () => {
     <form
       className={`${styles.contactForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={formError && styles.error}>
+      <span className={isFormValid ? "" : styles.error}>
         Both fields are mandatory
       </span>
       <Input
         label="email*"
         type="email"
-        stylesName={formError ? "contactError" : "contact"}
+        stylesName={isFormValid ? "contact" : "contactError"}
         register={register}
         required
       />
       <Textarea
         label="message*"
-        stylesName={formError && "error"}
+        stylesName={isFormValid ? "" : "error"}
         register={register}
         required
       />
