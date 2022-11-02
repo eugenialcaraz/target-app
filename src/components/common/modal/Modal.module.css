@@ -50,3 +50,22 @@
   font-size: 1.8rem;
   font-weight: 500;
 }
+
+.modalContent > div {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  padding-top: 9.8rem;
+}
+
+.modalContent > div > p {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 100%;
+}
+
+.modalContent > div > p:nth-child(1) {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}

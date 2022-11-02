@@ -16,10 +16,20 @@ const Modal = () => {
   const modalContent = (() => {
     switch (modalStatus) {
       case ModalStatus.Error:
-        return <p>error</p>;
+        return (
+          <div>
+            <p>Opps!</p>
+            <p>An error has occurred while sending your message.</p>
+          </div>
+        );
 
       case ModalStatus.Success:
-        return <p>success</p>;
+        return (
+          <div>
+            <p>Thanks for getting in touch!</p>
+            <p> We’ll get back to you as soon as we can.</p>
+          </div>
+        );
 
       default:
         return (
@@ -48,7 +58,9 @@ const Modal = () => {
 
         <div className={`${styles.modalContent} flex-column `}>
           <>
-            <Icon name="logo" />
+            <Icon
+              name={modalStatus === ModalStatus.Error ? "errorLogo" : "logo"}
+            />
             {modalContent}
           </>
         </div>
