@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Button, Input } from "@components/common";
+import { SignInForm } from "@components/common/forms";
 import { urlFormat } from "@/utils/urlFormat";
 import { Pages } from "@/pages";
+
 import styles from "./SignIn.module.css";
 
 const SignIn = () => (
@@ -17,14 +18,7 @@ const SignIn = () => (
         interest.
       </p>
     </div>
-    <form className={`${styles.form} flex-column`}>
-      <Input label="email" stylesName="signIn" />
-      <Input label="password" stylesName="signIn" />
-      <Button type="submit" value="sign in" />
-      <a className={styles.forgotPassword} href="!#">
-        Forgot your password?
-      </a>
-    </form>
+    <SignInForm />
     <div className={`${styles.bottomLinks} flex-column`}>
       <a className={`${styles.facebookLogin} uppercase`} href="!#">
         Connect with facebook
