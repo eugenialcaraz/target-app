@@ -20,7 +20,7 @@ const Textarea: FC<TextareaProps> = ({
     <label htmlFor={label}>{label}</label>
     <textarea
       className={styles[stylesName]}
-      id={`${label}*`}
+      id={label}
       {...register(label, { required })}
     />
   </div>
