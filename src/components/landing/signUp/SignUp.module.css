@@ -1,0 +1,38 @@
+.container {
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  max-height: 52.5rem;
+}
+
+.container h1 {
+  letter-spacing: 0.3rem;
+  margin-bottom: 3.8rem;
+}
+
+.form {
+  justify-content: center;
+}
+
+.form > input[type="submit"] {
+  margin-top: 3.4rem;
+}
+
+.divider {
+  border-bottom: 0.5px solid var(--black);
+  height: 1rem;
+  margin-top: 1.9rem;
+  width: 12.1rem;
+}
+
+.signIn {
+  margin-top: 1rem;
+  letter-spacing: 0.16rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+}
+
+.container > .form > div:nth-child(3) > input::placeholder {
+  color: var(--disabled);
+}

@@ -30,7 +30,9 @@ const Landing = () => {
       <div className={styles.leftContainer}>
         <Navbar />
         <div className={`${styles.contentContainer} center flex-column`}>
-          <Icon name="logo" />
+          {location.pathname !== urlFormat(Pages.SignUp) && (
+            <Icon name="logo" />
+          )}
           <Outlet />
         </div>
       </div>
