@@ -5,7 +5,9 @@ import styles from "./Forms.module.css";
 
 const SignInForm = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data: object) => console.log(data);
+  const onSubmit = (data: object) => {
+    //logic of submission
+  };
 
   return (
     <form
