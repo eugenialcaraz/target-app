@@ -9,13 +9,11 @@ type TextareaProps = {
   required: boolean;
 };
 
-const Textarea: FC<TextareaProps> = ({ label, register, required }) => {
-  return (
-    <div className={`${styles.textareaContainer} flex-column`}>
-      <label htmlFor={label}>{label}</label>
-      <textarea id={label} {...register(label, { required })} />
-    </div>
-  );
-};
+const Textarea: FC<TextareaProps> = ({ label, register, required }) => (
+  <div className={`${styles.textareaContainer} flex-column`}>
+    <label htmlFor={label}>{label}</label>
+    <textarea id={label} {...register(label, { required })} />
+  </div>
+);
 
 export { Textarea };
