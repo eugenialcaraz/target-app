@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleMenu } from "@/state/features/menu/menuSlice";
+import { handleMenu } from "@/state/features/menu";
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";

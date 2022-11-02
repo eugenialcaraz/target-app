@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { handleMenu } from "@/state/features/menu/menuSlice";
+import { handleMenu } from "@/state/features/menu";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { Icon, Navbar } from "@components/common";
 import Phone from "@assets/images/i6.png";
