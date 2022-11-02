@@ -11,7 +11,7 @@ import { urlFormat } from "@/utils/urlFormat";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { href: `/${urlFormat(Pages.About)}`, name: Pages.About },
+  { href: urlFormat(Pages.About), name: Pages.About },
   //I'm not including "Contact" here as it's a Modal and it's not supposed to change url path
   //However, array structure is made in case more links are needed in the future
 ];
