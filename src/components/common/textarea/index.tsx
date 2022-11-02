@@ -15,17 +15,15 @@ const Textarea: FC<TextareaProps> = ({
   stylesName = "",
   register,
   required,
-}) => {
-  return (
-    <div className={`${styles.textareaContainer} flex-column`}>
-      <label htmlFor={label}>{label}</label>
-      <textarea
-        className={styles[stylesName]}
-        id={`${label}*`}
-        {...register(label, { required })}
-      />
-    </div>
-  );
-};
+}) => (
+  <div className={`${styles.textareaContainer} flex-column`}>
+    <label htmlFor={label}>{label}</label>
+    <textarea
+      className={styles[stylesName]}
+      id={`${label}*`}
+      {...register(label, { required })}
+    />
+  </div>
+);
 
 export { Textarea };
