@@ -54,9 +54,14 @@ a:focus {
   color: var(--primary);
 }
 
-input {
+input,
+textarea {
   border: 0.5px solid var(--black);
   padding: 1rem;
+}
+
+textarea {
+  width: 100%;
 }
 
 input::placeholder {
@@ -99,12 +104,6 @@ input[type="button"]:hover,
 input[type="submit"]:hover {
   background-color: var(--primary);
   color: var(--black);
-}
-
-textarea {
-  border: 0.5px solid var(--black);
-  padding: 1rem;
-  width: 100%;
 }
 
 .center {

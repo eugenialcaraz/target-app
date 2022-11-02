@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+
 import { Button, Input, Textarea } from "@components/common";
+
 import styles from "./Forms.module.css";
 
 const ContactForm = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: object) => {
-    console.log(data);
+    //on submit logic
   };
 
   return (

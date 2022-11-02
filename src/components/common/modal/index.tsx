@@ -2,6 +2,7 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { handleModal } from "@/state/features";
 import { Icon, ContactForm } from "@/components/common";
+
 import styles from "./Modal.module.css";
 
 const Modal = () => {
