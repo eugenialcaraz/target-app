@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { UseFormRegister, FieldValues } from "react-hook-form";
+import { UseFormRegister, FieldValues, ValidationRule } from "react-hook-form";
 
 import styles from "./Input.module.css";
 
@@ -8,7 +8,8 @@ type InputProps = {
   stylesName: string;
   type?: "password" | "text" | "email";
   register: UseFormRegister<FieldValues>;
-  required: boolean;
+  required: ValidationRule<boolean>;
+  onChange?: () => void;
 };
 
 const Input: FC<InputProps> = ({
@@ -17,16 +18,19 @@ const Input: FC<InputProps> = ({
   type = "text",
   register,
   required,
-}) => (
-  <div className={`${styles.inputContainer} flex-column`}>
-    <label htmlFor={label}>{label}</label>
-    <input
-      type={type}
-      className={styles[stylesName]}
-      id={label}
-      {...register(label, { required })}
-    />
-  </div>
-);
+  onChange,
+}) => {
+  return (
+    <div className={`${styles.inputContainer} flex-column`}>
+      <label htmlFor={label}>{label}</label>
+      <input
+        type={type}
+        className={styles[stylesName]}
+        id={label}
+        {...register(label, { required, onChange })}
+      />
+    </div>
+  );
+};
 
 export { Input };

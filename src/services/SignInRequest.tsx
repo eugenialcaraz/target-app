@@ -12,6 +12,6 @@ export const signInRequest = async (body: object) => {
     const user = await response.json();
     return user;
   } catch (error) {
-    return "Something went wrong, please check your email & password combination";
+    return "Incorrect email or password";
   }
 };
