@@ -17,18 +17,16 @@ const Input: FC<InputProps> = ({
   type = "text",
   register,
   required,
-}) => {
-  return (
-    <div className={`${styles.inputContainer} flex-column`}>
-      <label htmlFor={label}>{label}</label>
-      <input
-        type={type}
-        className={styles[stylesName]}
-        id={label}
-        {...register(label, { required })}
-      />
-    </div>
-  );
-};
+}) => (
+  <div className={`${styles.inputContainer} flex-column`}>
+    <label htmlFor={label}>{label}</label>
+    <input
+      type={type}
+      className={styles[stylesName]}
+      id={label}
+      {...register(label, { required })}
+    />
+  </div>
+);
 
 export { Input };

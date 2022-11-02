@@ -15,11 +15,11 @@ const App = () => (
   <Routes>
     <Route path="/" element={<Landing />}>
       <Route path={urlFormat(Pages.About)} element={<About />} />
+      <Route path={urlFormat(Pages.ConfirmationDone)} element={<NewUser />} />
       <Route
         path={urlFormat(Pages.EmailConfirmation)}
         element={<EmailConfirmation />}
       />
-      <Route path={urlFormat(Pages.ConfirmationDone)} element={<NewUser />} />
       <Route path={urlFormat(Pages.SignIn)} element={<SignIn />} />
       <Route path={urlFormat(Pages.SignUp)} element={<SignUp />} />
     </Route>
