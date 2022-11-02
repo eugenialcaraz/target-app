@@ -10,3 +10,20 @@
   padding: 0.5rem;
   margin-top: 1.5rem;
 }
+
+.contactForm {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contactForm > div:nth-child(2) {
+  flex: 1;
+}
+.contactForm > div > label {
+  margin-bottom: 1rem;
+}
+.contactForm > input[type="submit"] {
+  margin-top: 1rem;
+}

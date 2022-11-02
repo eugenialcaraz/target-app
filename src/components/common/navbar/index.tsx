@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleMenu } from "@/state/features/menu";
+import { handleMenu, handleModal } from "@/state/features";
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";
@@ -21,6 +21,11 @@ const Navbar = () => {
   const { menuOpen } = useAppSelector((state) => state.menu);
 
   const location = useLocation();
+
+  const handleContact = () => {
+    dispatch(handleModal(true));
+    dispatch(handleMenu(false));
+  };
 
   return (
     <>
@@ -44,7 +49,9 @@ const Navbar = () => {
             {link.name}
           </Link>
         ))}
-        <button tabIndex={menuOpen ? 0 : -1}>{Pages.Contact}</button>
+        <button tabIndex={menuOpen ? 0 : -1} onClick={handleContact}>
+          {Pages.Contact}
+        </button>
       </nav>
     </>
   );
