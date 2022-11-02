@@ -5,15 +5,25 @@ import styles from "./Textarea.module.css";
 
 type TextareaProps = {
   label: string;
+  stylesName?: string;
   register: UseFormRegister<FieldValues>;
   required: boolean;
 };
 
-const Textarea: FC<TextareaProps> = ({ label, register, required }) => {
+const Textarea: FC<TextareaProps> = ({
+  label,
+  stylesName = "",
+  register,
+  required,
+}) => {
   return (
     <div className={`${styles.textareaContainer} flex-column`}>
       <label htmlFor={label}>{label}</label>
-      <textarea id={label} {...register(label, { required })} />
+      <textarea
+        className={styles[stylesName]}
+        id={`${label}*`}
+        {...register(label, { required })}
+      />
     </div>
   );
 };
