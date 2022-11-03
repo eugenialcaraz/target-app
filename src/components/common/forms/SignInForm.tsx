@@ -21,14 +21,17 @@ const SignInForm = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data: object) => {
-    const response = await signInRequest({
-      user: data,
-    });
-    if (typeof response === "object") {
+    try {
+      const response = await signInRequest({
+        user: data,
+      });
       setLocalStorage("user", response);
       navigate(urlFormat(Pages.Main));
-    } else {
-      setError("serverError", { type: "custom", message: response });
+    } catch (error) {
+      setError("serverError", {
+        type: "custom",
+        message: (error as Error).message,
+      });
     }
   };
 
@@ -51,7 +54,7 @@ const SignInForm = () => {
         stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
         register={register}
         required
-        onChange={() => clearErrors("serverError")}
+        onChange={() => clearErrors()}
       />
       <Input
         label="password"
@@ -59,7 +62,7 @@ const SignInForm = () => {
         stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
         register={register}
         required
-        onChange={() => clearErrors("serverError")}
+        onChange={() => clearErrors()}
       />
       <Button type="submit" value="sign in" />
       <a className={styles.forgotPassword} href="!#">

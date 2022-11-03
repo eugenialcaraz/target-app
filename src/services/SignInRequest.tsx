@@ -12,6 +12,6 @@ export const signInRequest = async (body: object) => {
     const user = await response.json();
     return user;
   } catch (error) {
-    return "Incorrect email or password";
+    throw new Error("Incorrect email or password");
   }
 };
