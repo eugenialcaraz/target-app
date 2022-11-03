@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "../features/menu/menuSlice";
+import menuReducer from "@/state/features/menu";
 import modalReducer from "@/state/features/modal";
-import userReducer from "../features/user/userSlice";
+import userReducer from "@/state/features/user";
 
 export const store = configureStore({
   reducer: { menu: menuReducer, modal: modalReducer, user: userReducer },

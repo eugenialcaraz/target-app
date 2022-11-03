@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { toggleMenu } from "@/state/features/menu/menuSlice";
-import { setGenders } from "@/state/features/user/userSlice";
+import { toggleMenu } from "@/state/features";
+import { setGenders } from "@/state/features/user";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { getGenders } from "@/services";
 import { Icon, Navbar, ContactModal } from "@components/common";

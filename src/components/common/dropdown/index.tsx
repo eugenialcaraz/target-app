@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { UseFormRegister, FieldValues, ValidationRule } from "react-hook-form";
-import { GenderType } from "@/state/features/user/userSlice";
+import { GenderType } from "@/state/features/user";
 import styles from "./Dropdown.module.css";
 
 type DropdownProps = {

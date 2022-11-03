@@ -1,9 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
 import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
-import { setUsername } from "@/state/features/user/userSlice";
+import { setUsername } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";
@@ -17,39 +18,45 @@ const SignUpForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted, isValid },
     setError,
     clearErrors,
   } = useForm();
 
   const navigate = useNavigate();
-  const isFormValid = Object.keys(errors).length === 0;
+  const isFormValid = !isSubmitted || isValid;
 
   const handleErrorMessage = (() => {
-    if (isFormValid) {
-      return "";
-    } else if (errors?.password?.type === "minLength") {
-      return "Password should be at least 6 characters long";
-    } else {
+    if (errors?.password?.type === "minLength") {
       return (
-        errors?.serverError?.message?.toString() || "All fields are required"
+        <ErrorMessage
+          errors={errors}
+          name="password"
+          message="Password should be at least 6 characters long"
+          render={({ message }) => <>{message}</>}
+        />
       );
+    } else {
+      return "All fields are required";
     }
   })();
 
   const onSubmit = async (data: object) => {
-    const response = await signUpRequest({
-      user: data,
-    });
-    if (typeof response === "object") {
+    try {
+      const response = await signUpRequest({
+        user: data,
+      });
       const { user } = response;
       dispatch(setUsername(user.name));
       navigate(urlFormat(Pages.EmailConfirmation));
       setTimeout(() => {
         navigate(urlFormat(Pages.ConfirmationDone));
       }, 1500);
-    } else {
-      setError("serverError", { type: "custom", message: response });
+    } catch (error) {
+      setError("serverError", {
+        type: "custom",
+        message: (error as Error).message,
+      });
     }
   };
 
@@ -58,6 +65,7 @@ const SignUpForm = () => {
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
+        <ErrorMessage errors={errors} name="serverError" />
         {handleErrorMessage}
       </span>
       <Input

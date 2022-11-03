@@ -31,6 +31,7 @@ const ContactForm = () => {
       </span>
       <Input
         label="email*"
+        name="email"
         type="email"
         stylesName={isFormValid ? "contact" : "contactError"}
         register={register}
