@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import { toggleMenu } from "@/state/features";
-import { setGenders } from "@/state/features/user";
+import { setGenders } from "@/state/features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { getGenders } from "@/services";
 import { Icon, Navbar, ContactModal } from "@components/common";
@@ -34,7 +34,10 @@ const Landing = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.leftContainer}>
+      <div
+        className={`${styles.leftContainer} ${
+          location.pathname === urlFormat(Pages.Main) && styles.main
+        }`}>
         <Navbar />
         <div className={`${styles.contentContainer} center flex-column`}>
           {location.pathname !== urlFormat(Pages.SignUp) && (

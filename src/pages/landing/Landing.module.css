@@ -10,10 +10,19 @@
   width: 50%;
   position: relative;
   height: inherit;
+  transition: all 0.6s ease;
 }
 
 .rightContainer {
   background-color: var(--primary);
+  flex: 1;
+}
+
+.main {
+  width: 26%;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow);
 }
 
 .playIconContainer {

@@ -4,7 +4,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
 import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
-import { setUsername } from "@/state/features/user";
+import { setUsername } from "@/state/features/user/userSlice";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";

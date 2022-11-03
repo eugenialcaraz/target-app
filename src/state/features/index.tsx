@@ -1,3 +1,3 @@
 export * from "./menu";
 export * from "./modal";
-export * from "./user";
+export * from "./user/userSlice";

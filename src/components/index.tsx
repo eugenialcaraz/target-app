@@ -4,4 +4,4 @@ export * from "./landing/signUp";
 export * from "./landing/about";
 export * from "./landing/emailConfirmation";
 export * from "./landing/newUser";
-export * from "./main";
+export * from "./main/userActions";

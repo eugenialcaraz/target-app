@@ -6,9 +6,8 @@ import {
   SignUp,
   EmailConfirmation,
   NewUser,
-  Main,
 } from "@components/index";
-import { Landing, Pages } from "@/pages";
+import { Landing, Main, Pages } from "@/pages";
 import { urlFormat } from "@/utils";
 
 const App = () => (
@@ -21,10 +20,10 @@ const App = () => (
         path={urlFormat(Pages.EmailConfirmation)}
         element={<EmailConfirmation />}
       />
-      <Route path={urlFormat(Pages.Main)} element={<Main />} />
       <Route path={urlFormat(Pages.SignIn)} element={<SignIn />} />
       <Route path={urlFormat(Pages.SignUp)} element={<SignUp />} />
     </Route>
+    <Route path={urlFormat(Pages.Main)} element={<Main />} />
   </Routes>
 );
 
