@@ -10,14 +10,6 @@
   margin-bottom: 3.8rem;
 }
 
-.form {
-  justify-content: center;
-}
-
-.form > input[type="submit"] {
-  margin-top: 3.4rem;
-}
-
 .divider {
   border-bottom: 0.5px solid var(--black);
   height: 1rem;
@@ -31,8 +23,4 @@
   font-size: 1.1rem;
   line-height: 1.3rem;
   font-weight: 500;
-}
-
-.container > .form > div:nth-child(3) > input::placeholder {
-  color: var(--disabled);
 }

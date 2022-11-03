@@ -25,5 +25,13 @@
 }
 
 .form > .error {
-  height: 4rem;
+  height: 2rem;
+}
+
+.signUpForm > div:nth-child(4) > input::placeholder {
+  color: var(--disabled);
+}
+
+.signUpForm > input[type="submit"] {
+  margin-top: 1.6rem;
 }
