@@ -12,7 +12,27 @@
   margin-top: 1.5rem;
 }
 
-.form > span {
+.contactForm {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contactForm > div:nth-child(3) {
+  flex: 1;
+}
+
+.contactForm > div > label {
+  margin-bottom: 1rem;
+}
+
+.contactForm > input[type="submit"] {
+  margin-top: 1rem;
+}
+
+.form > span,
+.contactForm > span {
   font-size: 1.2rem;
   line-height: 1.4rem;
   letter-spacing: 0.18rem;
@@ -24,6 +44,7 @@
   text-align: center;
 }
 
-.form > .error {
-  height: 4rem;
+.form > .error,
+.contactForm > .error {
+  height: 2rem;
 }

@@ -2,7 +2,12 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleMenu } from "@/state/features/menu/menuSlice";
+import {
+  toggleMenu,
+  toggleModal,
+  handleModalStatus,
+  ModalStatus,
+} from "@/state/features";
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";
@@ -22,12 +27,18 @@ const Navbar = () => {
 
   const location = useLocation();
 
+  const handleContact = () => {
+    dispatch(handleModalStatus(ModalStatus.Default));
+    dispatch(toggleModal());
+    dispatch(toggleMenu());
+  };
+
   return (
     <>
       <button
         className={styles.iconContainer}
         tabIndex={0}
-        onClick={() => dispatch(handleMenu(!menuOpen))}>
+        onClick={() => dispatch(toggleMenu())}>
         <Icon name={menuOpen ? "close" : "menu"} />
       </button>
       <nav
@@ -38,13 +49,15 @@ const Navbar = () => {
           <Link
             to={link.href}
             key={link.name}
-            onClick={() => dispatch(handleMenu(false))}
+            onClick={() => dispatch(toggleMenu())}
             className={link.href === location.pathname ? styles.activeLink : ""}
             tabIndex={menuOpen ? 0 : -1}>
             {link.name}
           </Link>
         ))}
-        <button tabIndex={menuOpen ? 0 : -1}>{Pages.Contact}</button>
+        <button tabIndex={menuOpen ? 0 : -1} onClick={handleContact}>
+          {Pages.Contact}
+        </button>
       </nav>
     </>
   );
