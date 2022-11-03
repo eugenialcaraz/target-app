@@ -21,19 +21,17 @@ const Input: FC<InputProps> = ({
   register,
   required,
   onChange,
-}) => {
-  return (
-    <div className={`${styles.inputContainer} flex-column`}>
-      <label htmlFor={label}>{label}</label>
-      <input
-        type={type}
-        className={styles[stylesName]}
-        id={label}
-        placeholder={placeholder}
-        {...register(label, { required, onChange })}
-      />
-    </div>
-  );
-};
+}) => (
+  <div className={`${styles.inputContainer} flex-column`}>
+    <label htmlFor={label}>{label}</label>
+    <input
+      type={type}
+      className={styles[stylesName]}
+      id={label}
+      placeholder={placeholder}
+      {...register(label, { required, onChange })}
+    />
+  </div>
+);
 
 export { Input };
