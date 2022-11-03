@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { handleMenu } from "@/state/features";
+import { toggleMenu } from "@/state/features";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { Icon, Navbar, Modal } from "@components/common";
+import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
 import { urlFormat } from "@/utils/urlFormat";
@@ -63,9 +63,9 @@ const Landing = () => {
       {menuOpen && (
         <div
           className={styles.overlay}
-          onClick={() => dispatch(handleMenu(false))}></div>
+          onClick={() => dispatch(toggleMenu())}></div>
       )}
-      <Modal />
+      <ContactModal />
     </div>
   );
 };

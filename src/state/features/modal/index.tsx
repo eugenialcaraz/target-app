@@ -19,8 +19,8 @@ const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    handleModal(state, action: PayloadAction<boolean>) {
-      state.modalOpen = action.payload;
+    toggleModal(state) {
+      state.modalOpen = !state.modalOpen;
     },
     handleModalStatus(state, action: PayloadAction<ModalStatus>) {
       state.modalStatus = action.payload;
@@ -28,5 +28,5 @@ const modalSlice = createSlice({
   },
 });
 
-export const { handleModal, handleModalStatus } = modalSlice.actions;
+export const { toggleModal, handleModalStatus } = modalSlice.actions;
 export default modalSlice.reducer;

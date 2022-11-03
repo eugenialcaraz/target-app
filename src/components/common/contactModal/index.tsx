@@ -1,16 +1,16 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleModal, ModalStatus } from "@/state/features";
+import { toggleModal, ModalStatus } from "@/state/features";
 import { Icon, ContactForm } from "@/components/common";
 
-import styles from "./Modal.module.css";
+import styles from "./ContactModal.module.css";
 
-const Modal = () => {
+const ContactModal = () => {
   const dispatch = useAppDispatch();
   const { modalOpen, modalStatus } = useAppSelector((state) => state.modal);
 
   const closeModal = () => {
-    dispatch(handleModal(false));
+    dispatch(toggleModal());
   };
 
   const modalContent = (() => {
@@ -47,7 +47,9 @@ const Modal = () => {
         className={`${styles.overlay} center flex-column ${
           modalOpen ? styles.opened : styles.closed
         }`}
-        onClick={closeModal}></div>
+        onClick={closeModal}>
+        {""}
+      </div>
       <div
         className={`${styles.modalContainer} ${
           modalOpen ? styles.opened : styles.closed
@@ -69,4 +71,4 @@ const Modal = () => {
   );
 };
 
-export { Modal };
+export { ContactModal };
