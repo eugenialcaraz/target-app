@@ -6,10 +6,12 @@ export type GenderType = {
 
 interface UserState {
   genders: Array<GenderType>;
+  username: string;
 }
 
 const initialState: UserState = {
   genders: [],
+  username: "",
 };
 
 const userSlice = createSlice({
@@ -19,8 +21,11 @@ const userSlice = createSlice({
     setGenders(state, action: PayloadAction<Array<GenderType>>) {
       state.genders = action.payload;
     },
+    setUsername(state, action: PayloadAction<string>) {
+      state.username = action.payload;
+    },
   },
 });
 
-export const { setGenders } = userSlice.actions;
+export const { setGenders, setUsername } = userSlice.actions;
 export default userSlice.reducer;

@@ -2,7 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import { useAppSelector } from "@/state/app/hooks";
+import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
+import { setUsername } from "@/state/features/user/userSlice";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";
@@ -12,6 +13,7 @@ import styles from "./Forms.module.css";
 
 const SignUpForm = () => {
   const { genders } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -40,7 +42,12 @@ const SignUpForm = () => {
       user: data,
     });
     if (typeof response === "object") {
+      const { user } = response;
+      dispatch(setUsername(user.name));
       navigate(urlFormat(Pages.EmailConfirmation));
+      setTimeout(() => {
+        navigate(urlFormat(Pages.ConfirmationDone));
+      }, 1500);
     } else {
       setError("serverError", { type: "custom", message: response });
     }

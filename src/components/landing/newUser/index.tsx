@@ -1,19 +1,19 @@
-import React, { FC } from "react";
+import React from "react";
+import { useAppSelector } from "@/state/app/hooks";
 import { SignInForm } from "@components/common";
 
 import styles from "./NewUser.module.css";
 
-type NewUserProps = {
-  username?: string;
+const NewUser = () => {
+  const { username } = useAppSelector((state) => state.user);
+  return (
+    <div className={`${styles.container} flex-column`}>
+      <span>Hi, {username}!</span>
+      <span>Welcome to</span>
+      <span>TARGET</span>
+      <SignInForm />
+    </div>
+  );
 };
-
-const NewUser: FC<NewUserProps> = ({ username = "cbrum" }) => (
-  <div className={`${styles.container} flex-column`}>
-    <span>Hi, {username}!</span>
-    <span>Welcome to</span>
-    <span>TARGET</span>
-    <SignInForm />
-  </div>
-);
 
 export { NewUser };
