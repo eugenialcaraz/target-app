@@ -1,7 +1,7 @@
 export const signInRequest = async (body: object) => {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_BASE_URL}/users/sign-in`,
+      `${import.meta.env.VITE_BASE_URL}/users/sign_in`,
       {
         method: "POST",
         headers: { "Content-type": "application/json" },

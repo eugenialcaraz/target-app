@@ -6,7 +6,8 @@
 
 .signIn,
 .error {
-  width: 18.8rem;
+  width: 100%;
+  max-width: 18.8rem;
   margin-bottom: 2.4rem;
 }
 

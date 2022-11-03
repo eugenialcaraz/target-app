@@ -15,7 +15,6 @@ const ContactForm = () => {
   } = useForm();
 
   const dispatch = useAppDispatch();
-  // const isFormValid = Object.keys(errors).length === 0;
 
   const onSubmit = (data: object) => {
     dispatch(handleModalStatus(ModalStatus.Success));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const SignInForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitted, isValid, errors },
     setError,
     clearErrors,
   } = useForm();
@@ -32,35 +32,34 @@ const SignInForm = () => {
     }
   };
 
-  const isFormValid = Object.keys(errors).length === 0;
-
   return (
     <form
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={isFormValid ? "" : styles.error}>
+      <span className={isSubmitted ? (isValid ? "" : styles.error) : ""}>
         <ErrorMessage errors={errors} name="serverError" />
         <ErrorMessage
           errors={errors}
           name={"email" || "password"}
           message="Both fields are required"
+          render={({ message }) => <>{message}</>}
         />
       </span>
       <Input
         label="email"
         type="email"
-        stylesName={isFormValid ? "signIn" : "error"}
+        stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
         register={register}
         required
-        onChange={() => clearErrors()}
+        onChange={() => clearErrors("serverError")}
       />
       <Input
         label="password"
         type="password"
-        stylesName={isFormValid ? "signIn" : "error"}
+        stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
         register={register}
         required
-        onChange={() => clearErrors()}
+        onChange={() => clearErrors("serverError")}
       />
       <Button type="submit" value="sign in" />
       <a className={styles.forgotPassword} href="!#">
