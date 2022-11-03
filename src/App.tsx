@@ -9,7 +9,7 @@ import {
   Main,
 } from "@components/index";
 import { Landing, Pages } from "@/pages";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 
 const App = () => (
   /*Private routing will be added once main screen is done*/

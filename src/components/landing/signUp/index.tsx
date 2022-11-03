@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { Input, Button } from "@components/common";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./SignUp.module.css";
@@ -11,7 +11,6 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    //Logic of creating user
     navigate(urlFormat(Pages.EmailConfirmation));
   };
 

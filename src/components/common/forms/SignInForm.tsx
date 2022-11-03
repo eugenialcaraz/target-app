@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button, Input } from "@components/common";
 import { signInRequest } from "@/services";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat, setLocalStorage } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./Forms.module.css";
@@ -24,6 +24,7 @@ const SignInForm = () => {
       user: data,
     });
     if (typeof response === "object") {
+      setLocalStorage("user", response);
       navigate(urlFormat(Pages.Main));
     } else {
       setError("serverError", { type: "custom", message: response });

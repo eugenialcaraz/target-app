@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { SignInForm } from "@components/common/forms";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./SignIn.module.css";
