@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import { handleMenu } from "@/state/features/menu/menuSlice";
+import { setGenders } from "@/state/features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
+import { getGenders } from "@/services";
 import { Icon, Navbar } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
@@ -19,10 +21,15 @@ const Landing = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const callGenders = async () => {
+    dispatch(setGenders(await getGenders()));
+  };
+
   useEffect(() => {
     if (location.pathname === "/") {
       navigate(urlFormat(Pages.SignIn));
     }
+    callGenders();
   }, []);
 
   return (

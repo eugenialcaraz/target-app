@@ -5,6 +5,7 @@ import styles from "./Input.module.css";
 
 type InputProps = {
   label: string;
+  name: string;
   stylesName: string;
   type?: "password" | "text" | "email";
   placeholder?: string;
@@ -15,6 +16,7 @@ type InputProps = {
 
 const Input: FC<InputProps> = ({
   label,
+  name,
   stylesName,
   type = "text",
   placeholder = "",
@@ -29,7 +31,7 @@ const Input: FC<InputProps> = ({
       className={styles[stylesName]}
       id={label}
       placeholder={placeholder}
-      {...register(label, { required, onChange })}
+      {...register(name, { required, onChange })}
     />
   </div>
 );

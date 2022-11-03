@@ -1,27 +1,36 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
+import { useAppSelector } from "@/state/app/hooks";
 import { Button, Input, Dropdown } from "@components/common";
+import { signUpRequest } from "@/services";
+import { urlFormat } from "@/utils";
+import { Pages } from "@/pages";
 
 import styles from "./Forms.module.css";
 
-const options = [
-  { value: "", name: "SELECT YOUR GENDER", hidden: true },
-  { value: "male", name: "Male" },
-  { value: "female", name: "Female" },
-  { value: "other", name: "None of the above" },
-];
-
 const SignUpForm = () => {
+  const { genders } = useAppSelector((state) => state.user);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
     clearErrors,
   } = useForm();
 
+  const navigate = useNavigate();
+
   const onSubmit = async (data: object) => {
-    console.log(data);
+    const response = await signUpRequest({
+      user: data,
+    });
+    if (typeof response === "object") {
+      navigate(urlFormat(Pages.EmailConfirmation));
+    } else {
+      setError("serverError", { type: "custom", message: response });
+    }
   };
 
   const isFormValid = Object.keys(errors).length === 0;
@@ -38,6 +47,7 @@ const SignUpForm = () => {
       </span>
       <Input
         label="name"
+        name="first_name"
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required
@@ -45,6 +55,7 @@ const SignUpForm = () => {
       />
       <Input
         label="email"
+        name="email"
         type="email"
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
@@ -53,6 +64,7 @@ const SignUpForm = () => {
       />
       <Input
         label="password"
+        name="password"
         type="password"
         stylesName={isFormValid ? "signUp" : "error"}
         placeholder="MIN. 6 CHARACTERS LONG"
@@ -62,19 +74,22 @@ const SignUpForm = () => {
       />
       <Input
         label="Confirm password"
+        name="password_confirmation"
         type="password"
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required
         onChange={() => clearErrors()}
       />
+
       <Dropdown
         label="gender"
         stylesName={isFormValid ? "signUp" : "error"}
-        options={options}
+        options={genders}
         register={register}
         required
       />
+
       <Button type="submit" value="sign up" />
     </form>
   );

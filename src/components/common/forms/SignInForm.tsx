@@ -45,6 +45,7 @@ const SignInForm = () => {
       </span>
       <Input
         label="email"
+        name="email"
         type="email"
         stylesName={isFormValid ? "signIn" : "error"}
         register={register}
@@ -53,6 +54,7 @@ const SignInForm = () => {
       />
       <Input
         label="password"
+        name="password"
         type="password"
         stylesName={isFormValid ? "signIn" : "error"}
         register={register}
