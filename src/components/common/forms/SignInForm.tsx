@@ -45,7 +45,7 @@ const SignInForm = () => {
       <Input
         label="email"
         type="email"
-        stylesName="signIn"
+        stylesName={isFormValid ? "signIn" : "error"}
         register={register}
         required
         onChange={() => clearErrors()}
@@ -53,7 +53,7 @@ const SignInForm = () => {
       <Input
         label="password"
         type="password"
-        stylesName="signIn"
+        stylesName={isFormValid ? "signIn" : "error"}
         register={register}
         required
         onChange={() => clearErrors()}

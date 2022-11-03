@@ -4,7 +4,8 @@
   align-items: center;
 }
 
-.signIn {
+.signIn,
+.error {
   width: 18.8rem;
   margin-bottom: 2.4rem;
 }
@@ -12,4 +13,8 @@
 .signUp {
   width: 18rem;
   margin-bottom: 1.8rem;
+}
+
+.error {
+  border: 1.5px solid var(--error);
 }

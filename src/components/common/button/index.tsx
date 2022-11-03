@@ -5,8 +5,8 @@ type ButtonProps = {
   type: "button" | "submit";
 };
 
-const Button: FC<ButtonProps> = ({ value, type }) => {
-  return <input type={type} value={value} />;
-};
+const Button: FC<ButtonProps> = ({ value, type }) => (
+  <input type={type} value={value} />
+);
 
 export { Button };
