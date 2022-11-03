@@ -19,6 +19,12 @@
   margin-bottom: 1rem;
 }
 
-.contactError {
+.contact {
+  width: 100%;
+}
+
+.contactError,
+.error {
   border: 1.5px solid var(--error);
+  width: 100%;
 }
