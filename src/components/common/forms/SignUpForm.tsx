@@ -36,7 +36,7 @@ const SignUpForm = () => {
           render={({ message }) => <>{message}</>}
         />
       );
-    } else {
+    } else if (!errors?.serverError) {
       return "All fields are required";
     }
   })();
@@ -65,7 +65,7 @@ const SignUpForm = () => {
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        <ErrorMessage errors={errors} name="serverError" />
+        {<ErrorMessage errors={errors} name="serverError" />}
         {handleErrorMessage}
       </span>
       <Input
