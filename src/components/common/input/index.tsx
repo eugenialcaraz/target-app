@@ -10,7 +10,7 @@ type InputProps = {
   type?: "password" | "text" | "email";
   placeholder?: string;
   register: UseFormRegister<FieldValues>;
-  required: ValidationRule<boolean>;
+  required: ValidationRule<boolean> | string | undefined;
   minLength?: ValidationRule<number>;
   onChange?: () => void;
 };

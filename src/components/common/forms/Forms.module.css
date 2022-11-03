@@ -12,19 +12,40 @@
   margin-top: 1.5rem;
 }
 
-.form > span {
+.contactForm {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contactForm > div:nth-child(3) {
+  flex: 1;
+}
+
+.contactForm > div > label {
+  margin-bottom: 1rem;
+}
+
+.contactForm > input[type="submit"] {
+  margin-top: 1rem;
+}
+
+.form > span,
+.contactForm > span {
   font-size: 1.2rem;
   line-height: 1.4rem;
   letter-spacing: 0.18rem;
   margin-bottom: 0.8rem;
   color: var(--error);
   overflow: hidden;
-  height: 0rem;
+  height: 0;
   transition: all 0.6s ease;
   text-align: center;
 }
 
-.form > .error {
+.form > .error,
+.contactForm > .error {
   height: 2rem;
 }
 

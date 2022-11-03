@@ -12,5 +12,5 @@ export const setLocalStorage = (key: string, value: object) => {
 };
 
 export const clearLocalStorage = () => {
-  localStorage && localStorage.clear();
+  localStorage?.clear();
 };

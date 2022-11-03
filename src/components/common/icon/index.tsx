@@ -1,5 +1,13 @@
 import React, { FC, ReactNode } from "react";
-import { Apple, Facebook, Logo, Menu, Twitter, Close } from "@assets/icons";
+import {
+  Apple,
+  Facebook,
+  Logo,
+  Menu,
+  Twitter,
+  Close,
+  ErrorLogo,
+} from "@assets/icons";
 
 type IconProps = {
   name: string;
@@ -10,6 +18,7 @@ interface iconObject {
 const icons: iconObject = {
   apple: <Apple />,
   close: <Close />,
+  errorLogo: <ErrorLogo />,
   facebook: <Facebook />,
   logo: <Logo />,
   menu: <Menu />,
