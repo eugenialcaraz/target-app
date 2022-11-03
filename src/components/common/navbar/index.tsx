@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleMenu, toggleModal } from "@/state/features";
+import { toggleMenu, toggleModal } from "@/state/features";
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";
@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const handleContact = () => {
     dispatch(toggleModal());
-    dispatch(handleMenu(false));
+    dispatch(toggleMenu());
   };
 
   return (
@@ -32,7 +32,7 @@ const Navbar = () => {
       <button
         className={styles.iconContainer}
         tabIndex={0}
-        onClick={() => dispatch(handleMenu(!menuOpen))}>
+        onClick={() => dispatch(toggleMenu())}>
         <Icon name={menuOpen ? "close" : "menu"} />
       </button>
       <nav
@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link
             to={link.href}
             key={link.name}
-            onClick={() => dispatch(handleMenu(false))}
+            onClick={() => dispatch(toggleMenu())}
             className={link.href === location.pathname ? styles.activeLink : ""}
             tabIndex={menuOpen ? 0 : -1}>
             {link.name}
