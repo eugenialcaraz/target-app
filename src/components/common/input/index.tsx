@@ -7,6 +7,7 @@ type InputProps = {
   label: string;
   stylesName: string;
   type?: "password" | "text" | "email";
+  placeholder?: string;
   register: UseFormRegister<FieldValues>;
   required: ValidationRule<boolean>;
   onChange?: () => void;
@@ -16,6 +17,7 @@ const Input: FC<InputProps> = ({
   label,
   stylesName,
   type = "text",
+  placeholder = "",
   register,
   required,
   onChange,
@@ -27,6 +29,7 @@ const Input: FC<InputProps> = ({
         type={type}
         className={styles[stylesName]}
         id={label}
+        placeholder={placeholder}
         {...register(label, { required, onChange })}
       />
     </div>
