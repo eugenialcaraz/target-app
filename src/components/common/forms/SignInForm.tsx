@@ -35,11 +35,13 @@ const SignInForm = () => {
     }
   };
 
+  const isFormValid = !isSubmitted || isValid;
+
   return (
     <form
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={isSubmitted ? (isValid ? "" : styles.error) : ""}>
+      <span className={isFormValid ? "" : styles.error}>
         <ErrorMessage errors={errors} name="serverError" />
         <ErrorMessage
           errors={errors}
@@ -51,7 +53,7 @@ const SignInForm = () => {
       <Input
         label="email"
         type="email"
-        stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
+        stylesName={isFormValid ? "signIn" : "error"}
         register={register}
         required
         onChange={() => clearErrors()}
@@ -59,7 +61,7 @@ const SignInForm = () => {
       <Input
         label="password"
         type="password"
-        stylesName={isSubmitted ? (isValid ? "signIn" : "error") : "signIn"}
+        stylesName={isFormValid ? "signIn" : "error"}
         register={register}
         required
         onChange={() => clearErrors()}
