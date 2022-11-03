@@ -15,3 +15,7 @@
 .contact > label {
   margin-bottom: 1rem;
 }
+
+.contactError {
+  border: 1.5px solid var(--error);
+}

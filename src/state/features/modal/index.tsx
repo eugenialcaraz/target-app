@@ -1,11 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export enum ModalStatus {
+  Default,
+  Success,
+  Error,
+}
 interface ModalState {
   modalOpen: boolean;
+  modalStatus: ModalStatus;
 }
 
 const initialState: ModalState = {
   modalOpen: false,
+  modalStatus: ModalStatus.Default,
 };
 
 const modalSlice = createSlice({
@@ -15,8 +22,11 @@ const modalSlice = createSlice({
     toggleModal(state) {
       state.modalOpen = !state.modalOpen;
     },
+    handleModalStatus(state, action: PayloadAction<ModalStatus>) {
+      state.modalStatus = action.payload;
+    },
   },
 });
 
-export const { toggleModal } = modalSlice.actions;
+export const { toggleModal, handleModalStatus } = modalSlice.actions;
 export default modalSlice.reducer;

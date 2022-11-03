@@ -5,14 +5,9 @@ import styles from "./Forms.module.css";
 
 const SignInForm = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data: object) => {
-    //logic of submission
-  };
 
   return (
-    <form
-      className={`${styles.form} flex-column`}
-      onSubmit={handleSubmit(onSubmit)}>
+    <form className={`${styles.form} flex-column`}>
       <Input
         label="email"
         type="email"

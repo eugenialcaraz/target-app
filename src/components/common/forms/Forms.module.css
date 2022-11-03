@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.contactForm > div:nth-child(2) {
+.contactForm > div:nth-child(3) {
   flex: 1;
 }
 
@@ -28,4 +28,19 @@
 
 .contactForm > input[type="submit"] {
   margin-top: 1rem;
+}
+
+.contactForm > span {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.18rem;
+  margin-bottom: 0.8rem;
+  color: var(--error);
+  overflow: hidden;
+  height: 0rem;
+  transition: all 0.6s ease;
+}
+
+.contactForm > .error {
+  height: 2rem;
 }

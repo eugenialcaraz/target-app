@@ -1,17 +1,45 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { toggleModal } from "@/state/features";
+import { toggleModal, ModalStatus } from "@/state/features";
 import { Icon, ContactForm } from "@/components/common";
 
 import styles from "./ContactModal.module.css";
 
 const ContactModal = () => {
   const dispatch = useAppDispatch();
-  const { modalOpen } = useAppSelector((state) => state.modal);
+  const { modalOpen, modalStatus } = useAppSelector((state) => state.modal);
 
   const closeModal = () => {
     dispatch(toggleModal());
   };
+
+  const modalContent = (() => {
+    switch (modalStatus) {
+      case ModalStatus.Error:
+        return (
+          <div>
+            <p>Opps!</p>
+            <p>An error has occurred while sending your message.</p>
+          </div>
+        );
+
+      case ModalStatus.Success:
+        return (
+          <div>
+            <p>Thanks for getting in touch!</p>
+            <p> We’ll get back to you as soon as we can.</p>
+          </div>
+        );
+
+      default:
+        return (
+          <>
+            <h1>Don’t be shy, drop us a line!</h1>
+            <ContactForm />
+          </>
+        );
+    }
+  })();
 
   return (
     <>
@@ -31,9 +59,12 @@ const ContactModal = () => {
         </div>
 
         <div className={`${styles.modalContent} flex-column `}>
-          <Icon name="logo" />
-          <h1>Don’t be shy, drop us a line!</h1>
-          <ContactForm />
+          <>
+            <Icon
+              name={modalStatus === ModalStatus.Error ? "errorLogo" : "logo"}
+            />
+            {modalContent}
+          </>
         </div>
       </div>
     </>
