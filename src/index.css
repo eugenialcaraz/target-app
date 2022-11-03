@@ -5,6 +5,7 @@
   --disabled: #a6a6a6;
   --shadowColor: rgba(0, 0, 0, 0.25);
   --shadow: drop-shadow(0px 2px 4px var(--shadowColor));
+  --overlay: rgba(42, 120, 152, 0.8);
 }
 
 * {
@@ -53,9 +54,14 @@ a:focus {
   color: var(--primary);
 }
 
-input {
+input,
+textarea {
   border: 0.5px solid var(--black);
   padding: 1rem;
+}
+
+textarea {
+  width: 100%;
 }
 
 input::placeholder {

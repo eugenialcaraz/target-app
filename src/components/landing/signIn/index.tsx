@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { SignInForm } from "@components/common/forms";
+import { SignInForm } from "@components/common";
 import { urlFormat } from "@/utils/urlFormat";
 import { Pages } from "@/pages";
 

@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "../features/menu/menuSlice";
+import menuReducer from "@/state/features/menu";
+import modalReducer from "@/state/features/modal";
 
 export const store = configureStore({
-  reducer: { menu: menuReducer },
+  reducer: { menu: menuReducer, modal: modalReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
