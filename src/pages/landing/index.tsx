@@ -4,7 +4,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import { handleMenu } from "@/state/features";
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { Icon, Navbar, Modal } from "@components/common";
+import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
 import { urlFormat } from "@/utils/urlFormat";
@@ -65,7 +65,7 @@ const Landing = () => {
           className={styles.overlay}
           onClick={() => dispatch(handleMenu(false))}></div>
       )}
-      <Modal />
+      <ContactModal />
     </div>
   );
 };

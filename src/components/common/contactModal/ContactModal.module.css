@@ -12,6 +12,8 @@
   width: 60%;
   max-height: 55.2rem;
   max-width: 81rem;
+  min-height: 49rem;
+  min-width: 70rem;
   justify-content: space-between;
   align-items: center;
   padding: 4rem;

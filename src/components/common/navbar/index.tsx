@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
-import { handleMenu, handleModal } from "@/state/features";
+import { handleMenu, toggleModal } from "@/state/features";
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";
@@ -23,7 +23,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const handleContact = () => {
-    dispatch(handleModal(true));
+    dispatch(toggleModal());
     dispatch(handleMenu(false));
   };
 
