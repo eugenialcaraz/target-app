@@ -11,7 +11,7 @@ import {
 
 import { Icon } from "@components/common";
 import { Pages } from "@/pages/pages";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 
 import styles from "./Navbar.module.css";
 

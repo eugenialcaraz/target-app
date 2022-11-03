@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { SignInForm } from "@components/common";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./SignIn.module.css";
@@ -14,7 +14,7 @@ const SignIn = () => (
       <h2>Find people near you & Connect</h2>
       <p>
         Create a target wherever on the map, specify your interest: Travel,
-        Dating, Music, etc and start conecting with others who share your
+        Dating, Music, etc and start connecting with others who share your
         interest.
       </p>
     </div>

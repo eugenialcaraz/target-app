@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
-import { urlFormat } from "@/utils/urlFormat";
+import { urlFormat } from "@/utils";
 import { Pages } from "../pages";
 
 import styles from "./Landing.module.css";

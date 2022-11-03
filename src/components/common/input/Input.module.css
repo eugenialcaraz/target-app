@@ -1,9 +1,13 @@
 .inputContainer {
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.signIn {
-  width: 18.8rem;
+.signIn,
+.error {
+  width: 100%;
+  max-width: 18.8rem;
   margin-bottom: 2.4rem;
 }
 
@@ -16,6 +20,12 @@
   margin-bottom: 1rem;
 }
 
-.contactError {
+.contact {
+  width: 100%;
+}
+
+.contactError,
+.error {
   border: 1.5px solid var(--error);
+  width: 100%;
 }

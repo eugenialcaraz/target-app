@@ -5,4 +5,5 @@ export enum Pages {
   SignUp = "Sign Up",
   EmailConfirmation = "Email Confirmation",
   ConfirmationDone = "Confirmation Done",
+  Main = "Main",
 }
