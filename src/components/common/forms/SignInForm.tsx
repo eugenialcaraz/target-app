@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
 import { Button, Input } from "@components/common";
@@ -38,10 +39,12 @@ const SignInForm = () => {
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        {isFormValid
-          ? ""
-          : errors?.serverError?.message?.toString() ||
-            "Both fields are required"}
+        <ErrorMessage errors={errors} name="serverError" />
+        <ErrorMessage
+          errors={errors}
+          name={"email" || "password"}
+          message="Both fields are required"
+        />
       </span>
       <Input
         label="email"
