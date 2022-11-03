@@ -21,6 +21,19 @@ const SignUpForm = () => {
   } = useForm();
 
   const navigate = useNavigate();
+  const isFormValid = Object.keys(errors).length === 0;
+
+  const handleErrorMessage = (() => {
+    if (isFormValid) {
+      return "";
+    } else if (errors?.password?.type === "minLength") {
+      return "Password should be at least 6 characters long";
+    } else {
+      return (
+        errors?.serverError?.message?.toString() || "All fields are required"
+      );
+    }
+  })();
 
   const onSubmit = async (data: object) => {
     const response = await signUpRequest({
@@ -33,17 +46,12 @@ const SignUpForm = () => {
     }
   };
 
-  const isFormValid = Object.keys(errors).length === 0;
-
   return (
     <form
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        {isFormValid
-          ? ""
-          : errors?.serverError?.message?.toString() ||
-            "All fields are required"}
+        {handleErrorMessage}
       </span>
       <Input
         label="name"
@@ -66,6 +74,7 @@ const SignUpForm = () => {
         label="password"
         name="password"
         type="password"
+        minLength={6}
         stylesName={isFormValid ? "signUp" : "error"}
         placeholder="MIN. 6 CHARACTERS LONG"
         register={register}
@@ -76,6 +85,7 @@ const SignUpForm = () => {
         label="Confirm password"
         name="password_confirmation"
         type="password"
+        minLength={6}
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required

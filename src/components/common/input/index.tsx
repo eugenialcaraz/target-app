@@ -11,6 +11,7 @@ type InputProps = {
   placeholder?: string;
   register: UseFormRegister<FieldValues>;
   required: ValidationRule<boolean>;
+  minLength?: ValidationRule<number>;
   onChange?: () => void;
 };
 
@@ -22,6 +23,7 @@ const Input: FC<InputProps> = ({
   placeholder = "",
   register,
   required,
+  minLength,
   onChange,
 }) => (
   <div className={`${styles.inputContainer} flex-column`}>
@@ -31,7 +33,7 @@ const Input: FC<InputProps> = ({
       className={styles[stylesName]}
       id={label}
       placeholder={placeholder}
-      {...register(name, { required, onChange })}
+      {...register(name, { required, onChange, minLength, maxLength: 100 })}
     />
   </div>
 );
