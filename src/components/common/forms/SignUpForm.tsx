@@ -49,6 +49,7 @@ const SignUpForm = () => {
       const { user } = response;
       dispatch(setUsername(user.name));
       navigate(urlFormat(Pages.EmailConfirmation));
+      //TODO: add confirmation email instead of timeout
       setTimeout(() => {
         navigate(urlFormat(Pages.ConfirmationDone));
       }, 1500);
@@ -109,6 +110,7 @@ const SignUpForm = () => {
 
       <Dropdown
         label="gender"
+        defaultOption="Select your gender"
         stylesName={isFormValid ? "signUp" : "error"}
         options={genders}
         register={register}
