@@ -5,10 +5,10 @@ import { SignInForm } from "@components/common";
 import styles from "./NewUser.module.css";
 
 const NewUser = () => {
-  const { username } = useAppSelector((state) => state.user);
+  const { user } = useAppSelector((state) => state.user);
   return (
     <div className={`${styles.container} flex-column`}>
-      <span>Hi, {username}!</span>
+      <span>Hi, {user?.name}!</span>
       <span>Welcome to</span>
       <span>TARGET</span>
       <SignInForm />

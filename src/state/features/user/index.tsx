@@ -1,17 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export type GenderType = {
-  option: string;
-};
-
+import { GenderType, UserType } from "@/types";
 interface UserState {
   genders: Array<GenderType>;
-  username: string;
+  user: UserType;
 }
 
 const initialState: UserState = {
   genders: [],
-  username: "",
+  user: {} as UserType,
 };
 
 const userSlice = createSlice({
@@ -21,11 +17,11 @@ const userSlice = createSlice({
     setGenders(state, action: PayloadAction<Array<GenderType>>) {
       state.genders = action.payload;
     },
-    setUsername(state, action: PayloadAction<string>) {
-      state.username = action.payload;
+    setUser(state, action: PayloadAction<UserType>) {
+      state.user = action.payload;
     },
   },
 });
 
-export const { setGenders, setUsername } = userSlice.actions;
+export const { setGenders, setUser } = userSlice.actions;
 export default userSlice.reducer;

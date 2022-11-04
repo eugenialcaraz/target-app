@@ -4,7 +4,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
 import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
-import { setUsername } from "@/state/features/user";
+import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";
@@ -46,8 +46,8 @@ const SignUpForm = () => {
       const response = await signUpRequest({
         user: data,
       });
-      const { user } = response;
-      dispatch(setUsername(user.name));
+      const user = response;
+      dispatch(setUser(user));
       navigate(urlFormat(Pages.EmailConfirmation));
       //TODO: add confirmation email instead of timeout
       setTimeout(() => {
