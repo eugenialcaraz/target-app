@@ -7,6 +7,7 @@ type DropdownProps = {
   label: string;
   options: Array<GenderType>;
   stylesName: string;
+  defaultOption: string;
   register: UseFormRegister<FieldValues>;
   required: ValidationRule<boolean>;
   onChange?: () => void;
@@ -15,6 +16,7 @@ type DropdownProps = {
 const Dropdown: FC<DropdownProps> = ({
   label,
   options,
+  defaultOption,
   stylesName = "",
   register,
   required,
@@ -28,7 +30,7 @@ const Dropdown: FC<DropdownProps> = ({
       defaultValue=""
       {...register(label, { required, onChange })}>
       <option value="" hidden>
-        Select your gender
+        {defaultOption}
       </option>
       {options.map(({ option }) => (
         <option key={option} value={option}>
