@@ -6,10 +6,9 @@ import {
   SignUp,
   EmailConfirmation,
   NewUser,
-  Main,
 } from "@components/index";
 import { PrivateRoute } from "@/routes/privateRoute";
-import { Landing, Pages } from "@/pages";
+import { Landing, Main, Pages } from "@/pages";
 import { urlFormat } from "@/utils";
 
 const App = () => (

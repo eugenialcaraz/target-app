@@ -1,0 +1,53 @@
+.container {
+  height: 100%;
+  width: 100%;
+  max-height: 58rem;
+  min-height: 46rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.container > div {
+  align-items: center;
+}
+
+.container > div > h1 {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  font-weight: 400;
+  margin: 1.7rem auto;
+}
+
+.container > div > h1 > strong {
+  font-weight: 700;
+}
+
+.container > div > h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.container > ul {
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+}
+
+.container > ul > li {
+  margin-bottom: 3rem;
+}
+
+.container > ul > li::marker {
+  content: url("@/assets/images/Bullet.svg");
+  width: 0.3rem;
+}
+
+.container > ul > li > p {
+  position: relative;
+  left: 0.4rem;
+}
+
+.container > ul > li > p > strong {
+  letter-spacing: 0.21rem;
+  font-weight: 700;
+}

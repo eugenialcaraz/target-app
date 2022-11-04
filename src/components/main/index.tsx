@@ -5,7 +5,7 @@ import { clearLocalStorage, getLocalStorage, urlFormat } from "@/utils";
 import { Pages } from "@/pages";
 import { logoutRequest } from "@/services";
 
-const Main = () => {
+const UserActions = () => {
   const user = getLocalStorage("user");
 
   const handleLogout = async () => {
@@ -25,4 +25,4 @@ const Main = () => {
   );
 };
 
-export { Main };
+export { UserActions };
