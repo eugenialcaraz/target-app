@@ -22,12 +22,11 @@ const App = () => (
         path={urlFormat(Pages.EmailConfirmation)}
         element={<EmailConfirmation />}
       />
-      <Route path={urlFormat(Pages.Main)} element={<PrivateRoute />}>
-        <Route path={urlFormat(Pages.Main)} element={<Main />} />
-      </Route>
-
       <Route path={urlFormat(Pages.SignIn)} element={<SignIn />} />
       <Route path={urlFormat(Pages.SignUp)} element={<SignUp />} />
+    </Route>
+    <Route path={urlFormat(Pages.Main)} element={<PrivateRoute />}>
+      <Route path="" element={<Main />} />
     </Route>
   </Routes>
 );

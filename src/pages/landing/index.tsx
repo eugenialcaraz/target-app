@@ -9,7 +9,7 @@ import { getGenders } from "@/services";
 import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
-import { urlFormat } from "@/utils";
+import { urlFormat, useAuth } from "@/utils";
 import { Pages } from "../pages";
 
 import styles from "./Landing.module.css";
@@ -26,10 +26,10 @@ const Landing = () => {
   };
 
   useEffect(() => {
-    if (location.pathname === "/") {
-      navigate(urlFormat(Pages.SignIn));
-    }
     callGenders();
+    useAuth()
+      ? navigate(urlFormat(Pages.Main))
+      : location.pathname === "/" && navigate(urlFormat(Pages.SignIn));
   }, []);
 
   return (
