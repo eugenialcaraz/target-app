@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { clearLocalStorage, getLocalStorage, urlFormat } from "@/utils";
+import { clearLocalStorage, urlFormat, isAuthenticated } from "@/utils";
 import { Pages } from "@/pages";
 import { logoutRequest } from "@/services";
 
 const UserActions = () => {
-  const user = getLocalStorage("user");
+  const user = isAuthenticated();
 
   const handleLogout = async () => {
     try {

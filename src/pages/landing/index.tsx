@@ -9,7 +9,7 @@ import { getGenders } from "@/services";
 import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
-import { urlFormat, useAuth } from "@/utils";
+import { urlFormat, isAuthenticated } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./Landing.module.css";
@@ -27,7 +27,7 @@ const Landing = () => {
 
   useEffect(() => {
     callGenders();
-    useAuth()
+    isAuthenticated()
       ? navigate(urlFormat(Pages.Main))
       : location.pathname === "/" && navigate(urlFormat(Pages.SignIn));
   }, []);
