@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
+import { setGenders } from "@/state/features/user";
+import { getGenders } from "@/services";
 import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
 import { setUsername } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
@@ -23,6 +25,10 @@ const SignUpForm = () => {
     clearErrors,
   } = useForm();
 
+  const callGenders = async () => {
+    dispatch(setGenders(await getGenders()));
+  };
+
   const navigate = useNavigate();
   const isFormValid = !isSubmitted || isValid;
 
@@ -40,6 +46,10 @@ const SignUpForm = () => {
       return "All fields are required";
     }
   })();
+
+  useEffect(() => {
+    callGenders();
+  }, []);
 
   const onSubmit = async (data: object) => {
     try {

@@ -1,4 +1,5 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+import { GenderType } from "@/state/features";
 
 export const signInRequest = async (body: object) => {
   try {
@@ -41,7 +42,7 @@ export const getGenders = async () => {
     });
     if (!response.ok) throw new Error();
     const { genders } = await response.json();
-    return genders;
+    return genders.map((option: GenderType) => option.option);
   } catch (error) {
     throw new Error();
   }

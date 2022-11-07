@@ -5,7 +5,7 @@ export type GenderType = {
 };
 
 interface UserState {
-  genders: Array<GenderType>;
+  genders: Array<string>;
   username: string;
 }
 
@@ -18,7 +18,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setGenders(state, action: PayloadAction<Array<GenderType>>) {
+    setGenders(state, action: PayloadAction<Array<string>>) {
       state.genders = action.payload;
     },
     setUsername(state, action: PayloadAction<string>) {

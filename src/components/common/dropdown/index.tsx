@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import { UseFormRegister, FieldValues, ValidationRule } from "react-hook-form";
-import { GenderType } from "@/state/features/user";
 import styles from "./Dropdown.module.css";
 
 type DropdownProps = {
   label: string;
-  options: Array<GenderType>;
+  options: Array<string>;
   stylesName: string;
   defaultOption: string;
   register: UseFormRegister<FieldValues>;
@@ -32,8 +31,8 @@ const Dropdown: FC<DropdownProps> = ({
       <option value="" hidden>
         {defaultOption}
       </option>
-      {options.map(({ option }) => (
-        <option key={option} value={option}>
+      {options.map((option, i) => (
+        <option key={i} value={option}>
           {option}
         </option>
       ))}
