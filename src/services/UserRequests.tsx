@@ -1,4 +1,5 @@
 import { UserType } from "@/types";
+
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const requestedHeaders = ["access-token", "client", "expiry", "uid"];
 

@@ -8,7 +8,7 @@ import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages } from "@/types";
 
 import styles from "./Forms.module.css";
 
@@ -43,10 +43,7 @@ const SignUpForm = () => {
 
   const onSubmit = async (data: object) => {
     try {
-      const response = await signUpRequest({
-        user: data,
-      });
-      const user = response;
+      const user = await signUpRequest({ user: data });
       dispatch(setUser(user));
       navigate(urlFormat(Pages.EmailConfirmation));
       //TODO: add confirmation email instead of timeout

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Input } from "@components/common";
 import { signInRequest } from "@/services";
 import { urlFormat, setLocalStorage } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages, LocalStorageKeys } from "@/types";
 
 import styles from "./Forms.module.css";
 
@@ -25,7 +25,7 @@ const SignInForm = () => {
       const response = await signInRequest({
         user: data,
       });
-      setLocalStorage("user", response);
+      setLocalStorage(LocalStorageKeys.user, response);
       navigate(urlFormat(Pages.Main));
     } catch (error) {
       setError("serverError", {

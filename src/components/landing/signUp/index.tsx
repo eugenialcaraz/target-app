@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { SignUpForm } from "@components/common";
 import { urlFormat } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages } from "@/types";
 
 import styles from "./SignUp.module.css";
 

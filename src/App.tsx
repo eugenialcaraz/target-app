@@ -8,7 +8,8 @@ import {
   NewUser,
   Main,
 } from "@components/index";
-import { Landing, Pages } from "@/pages";
+import { Landing } from "@/pages";
+import { Pages } from "@/types";
 import { urlFormat } from "@/utils";
 
 const App = () => (
