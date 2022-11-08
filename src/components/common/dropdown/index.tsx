@@ -5,7 +5,7 @@ import styles from "./Dropdown.module.css";
 type DropdownProps = {
   label: string;
   options: Array<string>;
-  stylesName: string;
+  stylesName?: string;
   defaultOption: string;
   register: UseFormRegister<FieldValues>;
   required: ValidationRule<boolean>;
@@ -31,8 +31,8 @@ const Dropdown: FC<DropdownProps> = ({
       <option value="" hidden>
         {defaultOption}
       </option>
-      {options.map((option, i) => (
-        <option key={i} value={option}>
+      {options.map((option) => (
+        <option key={option} value={option}>
           {option}
         </option>
       ))}
