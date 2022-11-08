@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { urlFormat, useAuth } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages } from "@/types";
 
 const PrivateRoute = () => {
   const auth = useAuth();
