@@ -8,22 +8,22 @@
   margin-top: 5rem;
 }
 
-.container > div {
+.container > .headlines {
   align-items: center;
 }
 
-.container > div > h1 {
+.container > .headlines > h1 {
   font-size: 2rem;
   letter-spacing: 0.3rem;
   font-weight: 400;
   margin: 1.7rem auto;
 }
 
-.container > div > h1 > strong {
+.container > .headlines > h1 > strong {
   font-weight: 700;
 }
 
-.container > div > h2 {
+.container > .headlines > h2 {
   font-size: 1.8rem;
   font-weight: 500;
 }

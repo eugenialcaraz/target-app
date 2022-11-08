@@ -5,7 +5,7 @@ import styles from "./Welcome.module.css";
 const Welcome = () => {
   return (
     <div className={`${styles.container} flex-column`}>
-      <div className="flex-column">
+      <div className={`${styles.headlines} flex-column`}>
         <Icon name="logo" />
         <h1>
           Welcome to <strong>TARGET</strong>
