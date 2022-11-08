@@ -1,4 +1,4 @@
-import { UserType } from "@/types";
+import { UserType, GenderType } from "@/types";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const requestHeaders = ["access-token", "client", "expiry", "uid"];
@@ -69,7 +69,7 @@ export const getGenders = async () => {
     });
     if (!response.ok) throw new Error();
     const { genders } = await response.json();
-    return genders;
+    return genders.map((option: GenderType) => option.option);
   } catch (error) {
     throw new Error();
   }
