@@ -1,7 +1,7 @@
 import { UserType } from "@/types";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-const requestedHeaders = ["access-token", "client", "expiry", "uid"];
+const requestHeaders = ["access-token", "client", "expiry", "uid"];
 
 export const signInRequest = async (body: object) => {
   try {
@@ -12,7 +12,7 @@ export const signInRequest = async (body: object) => {
     });
     if (!response.ok) throw new Error();
     const { user } = await response.json();
-    requestedHeaders.map(
+    requestHeaders.map(
       (header) => (user[header] = response.headers.get(header))
     );
     return user;
