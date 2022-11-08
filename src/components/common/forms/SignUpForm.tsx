@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { setGenders } from "@/state/features/user";
 import { getGenders } from "@/services";
 import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
-import { setUsername } from "@/state/features/user";
+import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages } from "@/types";
 
 import styles from "./Forms.module.css";
 
@@ -53,11 +53,8 @@ const SignUpForm = () => {
 
   const onSubmit = async (data: object) => {
     try {
-      const response = await signUpRequest({
-        user: data,
-      });
-      const { user } = response;
-      dispatch(setUsername(user.name));
+      const user = await signUpRequest({ user: data });
+      dispatch(setUser(user));
       navigate(urlFormat(Pages.EmailConfirmation));
       //TODO: add confirmation email instead of timeout
       setTimeout(() => {
