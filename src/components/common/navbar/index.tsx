@@ -10,7 +10,7 @@ import {
 } from "@/state/features";
 
 import { Icon } from "@components/common";
-import { Pages } from "@/pages/pages";
+import { Pages } from "@/types";
 import { urlFormat } from "@/utils";
 
 import styles from "./Navbar.module.css";
