@@ -1,4 +1,5 @@
 import React from "react";
+import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +8,7 @@ import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
 import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
-import { urlFormat } from "@/utils";
+import { urlFormat, setLocalStorage } from "@/utils";
 import { Pages } from "@/pages";
 
 import styles from "./Forms.module.css";
@@ -48,11 +49,14 @@ const SignUpForm = () => {
       });
       const user = response;
       dispatch(setUser(user));
+      setLocalStorage("user", response);
+      emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {},
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
       navigate(urlFormat(Pages.EmailConfirmation));
-      //TODO: add confirmation email instead of timeout
-      setTimeout(() => {
-        navigate(urlFormat(Pages.ConfirmationDone));
-      }, 1500);
     } catch (error) {
       setError("serverError", {
         type: "custom",
