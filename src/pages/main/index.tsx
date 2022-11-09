@@ -23,7 +23,7 @@ const Main = () => {
     try {
       await getNavigationPermissions(setCurrentPosition);
     } catch (error) {
-      console.log((error as Error).message);
+      console.error((error as Error).message);
     }
   };
 

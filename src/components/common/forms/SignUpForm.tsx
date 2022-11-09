@@ -54,7 +54,6 @@ const SignUpForm = () => {
       );
       navigate(urlFormat(Pages.EmailConfirmation));
     } catch (error: any) {
-      console.log(error.errors);
       setError("serverError", {
         type: "custom",
         message: (error as Error).message,
