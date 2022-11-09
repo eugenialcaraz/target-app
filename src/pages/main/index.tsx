@@ -13,7 +13,7 @@ const Main = () => {
   const dispatch = useAppDispatch();
   const { menuOpen } = useAppSelector((state) => state.menu);
 
-  const [clicks, setClicks] = React.useState<google.maps.LatLng[]>([]);
+  const [targets, setTargets] = React.useState<google.maps.LatLng[]>([]);
   const [mapCenter, setMapCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 0,
     lng: 0,
@@ -36,7 +36,7 @@ const Main = () => {
   //This function will be edited once I add targets at the map
   const onClick = (e: google.maps.MapMouseEvent) => {
     // eslint-disable-next-line
-    setClicks([...clicks, e.latLng!]);
+    setTargets([...targets, e.latLng!]);
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const Main = () => {
         <Wrapper apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
           <Map center={mapCenter} onClick={onClick}>
             <Marker position={mapCenter} icon={UserLocation} />
-            {clicks.map((latLng, i) => (
+            {targets.map((latLng, i) => (
               <Marker key={i} position={latLng} />
             ))}
           </Map>
