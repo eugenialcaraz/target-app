@@ -17,7 +17,7 @@ interface MapProps extends google.maps.MapOptions {
   children?: ReactNode;
 }
 
-const Map: FC<MapProps> = ({ children, onClick, ...options }) => {
+const Map: FC<MapProps> = ({ children, onClick, ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<google.maps.Map>();
 
@@ -31,13 +31,13 @@ const Map: FC<MapProps> = ({ children, onClick, ...options }) => {
   useDeepCompareEffectForMaps(() => {
     if (map) {
       map.setOptions({
-        ...options,
+        ...props,
         mapTypeControl: false,
         zoom: 18,
         styles: mapStyles,
       });
     }
-  }, [map, options]);
+  }, [map, props]);
 
   useEffect(() => {
     if (map) {

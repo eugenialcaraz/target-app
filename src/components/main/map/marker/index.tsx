@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 
-const Marker: FC<google.maps.MarkerOptions> = (options) => {
+const Marker: FC<google.maps.MarkerOptions> = (props) => {
   const [marker, setMarker] = useState<google.maps.Marker>();
 
   useEffect(() => {
@@ -16,9 +16,9 @@ const Marker: FC<google.maps.MarkerOptions> = (options) => {
 
   useEffect(() => {
     if (marker) {
-      marker.setOptions(options);
+      marker.setOptions(props);
     }
-  }, [marker, options]);
+  }, [marker, props]);
 
   return null;
 };
