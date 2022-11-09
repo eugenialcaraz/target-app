@@ -12,7 +12,7 @@ import { signUpRequest } from "@/services";
 import { urlFormat, setLocalStorage } from "@/utils";
 import { LocalStorageKeys, Pages } from "@/types";
 import { useYupValidationResolver } from "@/hooks/formValidation";
-import { validationSchema } from "./validationSchema";
+import { signUpValidationSchema } from "@components/common";
 
 import styles from "./Forms.module.css";
 
@@ -21,7 +21,7 @@ const SignUpForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const resolver = useYupValidationResolver(validationSchema);
+  const resolver = useYupValidationResolver(signUpValidationSchema);
 
   const {
     register,
