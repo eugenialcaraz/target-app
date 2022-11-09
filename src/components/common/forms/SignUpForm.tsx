@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 import { setGenders } from "@/state/features/user";
 import { getGenders } from "@/services";
@@ -12,42 +11,30 @@ import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
 import { urlFormat, setLocalStorage } from "@/utils";
 import { LocalStorageKeys, Pages } from "@/types";
-
+import { useYupValidationResolver } from "@/hooks/formValidation";
+import { validationSchema } from "./validationSchema";
 
 import styles from "./Forms.module.css";
 
 const SignUpForm = () => {
   const { genders } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const resolver = useYupValidationResolver(validationSchema);
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted, isValid },
     setError,
-    clearErrors,
-  } = useForm();
+  } = useForm({ resolver });
+
+  const isFormValid = !isSubmitted || isValid;
 
   const callGenders = async () => {
     dispatch(setGenders(await getGenders()));
   };
-
-  const navigate = useNavigate();
-  const isFormValid = !isSubmitted || isValid;
-
-  const handleErrorMessage = (() => {
-    if (errors?.password?.type === "minLength") {
-      return (
-        <ErrorMessage
-          errors={errors}
-          name="password"
-          message="Password should be at least 6 characters long"
-          render={({ message }) => <>{message}</>}
-        />
-      );
-    } else if (!errors?.serverError) {
-      return "All fields are required";
-    }
-  })();
 
   useEffect(() => {
     callGenders();
@@ -65,7 +52,8 @@ const SignUpForm = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       navigate(urlFormat(Pages.EmailConfirmation));
-    } catch (error) {
+    } catch (error: any) {
+      console.log(error.errors);
       setError("serverError", {
         type: "custom",
         message: (error as Error).message,
@@ -78,8 +66,7 @@ const SignUpForm = () => {
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        {<ErrorMessage errors={errors} name="serverError" />}
-        {handleErrorMessage}
+        {String(Object.values(errors)[0]?.message)}
       </span>
       <Input
         label="name"
@@ -87,7 +74,6 @@ const SignUpForm = () => {
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required
-        onChange={() => clearErrors()}
       />
       <Input
         label="email"
@@ -96,7 +82,6 @@ const SignUpForm = () => {
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required
-        onChange={() => clearErrors()}
       />
       <Input
         label="password"
@@ -107,7 +92,6 @@ const SignUpForm = () => {
         placeholder="MIN. 6 CHARACTERS LONG"
         register={register}
         required
-        onChange={() => clearErrors()}
       />
       <Input
         label="Confirm password"
@@ -117,7 +101,6 @@ const SignUpForm = () => {
         stylesName={isFormValid ? "signUp" : "error"}
         register={register}
         required
-        onChange={() => clearErrors()}
       />
 
       <Dropdown
