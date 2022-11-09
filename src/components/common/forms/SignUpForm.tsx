@@ -31,6 +31,7 @@ const SignUpForm = () => {
   } = useForm({ resolver });
 
   const isFormValid = !isSubmitted || isValid;
+  const errorMessage = String(Object.values(errors)[0]?.message || "");
 
   const callGenders = async () => {
     dispatch(setGenders(await getGenders()));
@@ -65,9 +66,7 @@ const SignUpForm = () => {
     <form
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={isFormValid ? "" : styles.error}>
-        {String(Object.values(errors)[0]?.message || "")}
-      </span>
+      <span className={isFormValid ? "" : styles.error}>{errorMessage}</span>
       <Input
         label="name"
         name="first_name"

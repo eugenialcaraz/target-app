@@ -24,14 +24,13 @@ const ContactForm = () => {
   };
 
   const isFormValid = !isSubmitted || isValid;
+  const errorMessage = String(Object.values(errors)[0]?.message || "");
 
   return (
     <form
       className={`${styles.contactForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={isFormValid ? "" : styles.error}>
-        {String(Object.values(errors)[0]?.message || "")}
-      </span>
+      <span className={isFormValid ? "" : styles.error}>{errorMessage}</span>
       <Input
         label="email*"
         name="email"
