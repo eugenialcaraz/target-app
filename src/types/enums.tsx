@@ -1,3 +1,7 @@
+export enum LocalStorageKeys {
+  user = "user",
+}
+
 export enum Pages {
   About = "About",
   Contact = "Contact",

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { GenderType, UserType } from "@/types";
+import { UserType } from "@/types";
 interface UserState {
-  genders: Array<GenderType>;
+  genders: Array<string>;
   user: UserType;
 }
 
@@ -14,7 +14,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setGenders(state, action: PayloadAction<Array<GenderType>>) {
+    setGenders(state, action: PayloadAction<Array<string>>) {
       state.genders = action.payload;
     },
     setUser(state, action: PayloadAction<UserType>) {

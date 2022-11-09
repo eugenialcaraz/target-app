@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { clearLocalStorage, getLocalStorage, urlFormat } from "@/utils";
-import { Pages } from "@/pages";
+import { Pages, LocalStorageKeys } from "@/types";
 import { logoutRequest } from "@/services";
 
-const UserActions = () => {
-  const user = getLocalStorage("user");
+const Main = () => {
+  const user = getLocalStorage(LocalStorageKeys.user);
 
   const handleLogout = async () => {
     try {
@@ -25,4 +25,4 @@ const UserActions = () => {
   );
 };
 
-export { UserActions };
+export { Main };
