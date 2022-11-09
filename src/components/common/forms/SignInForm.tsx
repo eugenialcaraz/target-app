@@ -44,7 +44,7 @@ const SignInForm = () => {
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        {String(Object.values(errors)[0]?.message)}
+        {String(Object.values(errors)[0]?.message || "")}
       </span>
       <Input
         label="email"

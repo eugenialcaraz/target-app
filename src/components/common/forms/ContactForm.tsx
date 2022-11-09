@@ -2,17 +2,20 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useAppDispatch } from "@/state/app/hooks";
 import { handleModalStatus, ModalStatus } from "@/state/features";
+import { useYupValidationResolver } from "@/hooks/formValidation";
+import { contactValidationSchema } from "@components/common";
 
 import { Button, Input, Textarea } from "@components/common";
 
 import styles from "./Forms.module.css";
 
 const ContactForm = () => {
+  const resolver = useYupValidationResolver(contactValidationSchema);
   const {
     register,
     handleSubmit,
-    formState: { isValid, isSubmitted },
-  } = useForm();
+    formState: { isValid, isSubmitted, errors },
+  } = useForm({ resolver });
 
   const dispatch = useAppDispatch();
 
@@ -27,7 +30,7 @@ const ContactForm = () => {
       className={`${styles.contactForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        Both fields are mandatory
+        {String(Object.values(errors)[0]?.message || "")}
       </span>
       <Input
         label="email*"
@@ -39,6 +42,7 @@ const ContactForm = () => {
       />
       <Textarea
         label="message*"
+        name="message"
         stylesName={isFormValid ? "" : "error"}
         register={register}
         required

@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
 const required = "All fields are required";
+const contactFormRequired = "Both fields are mandatory";
 
 export const signInValidationSchema = yup
   .object({
@@ -30,3 +31,14 @@ export const signUpValidationSchema = yup
     gender: yup.string().required(required),
   })
   .required(required);
+
+export const contactValidationSchema = yup.object({
+  email: yup
+    .string()
+    .max(64, "Please enter a valid email")
+    .required(contactFormRequired),
+  message: yup
+    .string()
+    .max(500, "Message should be upto 500 characters")
+    .required(contactFormRequired),
+});

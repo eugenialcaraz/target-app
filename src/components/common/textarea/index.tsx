@@ -5,6 +5,7 @@ import styles from "./Textarea.module.css";
 
 type TextareaProps = {
   label: string;
+  name: string;
   stylesName?: string;
   register: UseFormRegister<FieldValues>;
   required: boolean;
@@ -12,6 +13,7 @@ type TextareaProps = {
 
 const Textarea: FC<TextareaProps> = ({
   label,
+  name,
   stylesName = "",
   register,
   required,
@@ -21,7 +23,7 @@ const Textarea: FC<TextareaProps> = ({
     <textarea
       className={styles[stylesName]}
       id={label}
-      {...register(label, { required })}
+      {...register(name, { required })}
     />
   </div>
 );

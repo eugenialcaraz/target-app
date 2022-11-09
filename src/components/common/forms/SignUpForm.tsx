@@ -66,7 +66,7 @@ const SignUpForm = () => {
       className={`${styles.form} ${styles.signUpForm} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
       <span className={isFormValid ? "" : styles.error}>
-        {String(Object.values(errors)[0]?.message)}
+        {String(Object.values(errors)[0]?.message || "")}
       </span>
       <Input
         label="name"
