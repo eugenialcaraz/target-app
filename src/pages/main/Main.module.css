@@ -1,0 +1,37 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+.leftContainer,
+.rightContainer {
+  position: relative;
+  height: inherit;
+}
+
+.leftContainer {
+  width: 26%;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+.rightContainer {
+  flex: 1;
+  z-index: 0;
+}
+
+.contentContainer {
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+  width: 82%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
