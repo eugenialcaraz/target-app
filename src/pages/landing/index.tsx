@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/state/app/hooks";
 import { Icon, Navbar, ContactModal } from "@components/common";
 import Phone from "@assets/images/i6.png";
 import Play from "@assets/images/play.png";
-import { urlFormat, isAuthenticated } from "@/utils";
+import { urlFormat, getCurrentUser } from "@/utils";
 import { Pages } from "@/types";
 
 import styles from "./Landing.module.css";
@@ -20,7 +20,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    isAuthenticated();
+    getCurrentUser();
     if (location.pathname === "/") {
       navigate(urlFormat(Pages.SignIn));
     }

@@ -1,5 +1,5 @@
 import { getLocalStorage } from "@/utils";
 
-export const isAuthenticated = () => {
+export const getCurrentUser = () => {
   return getLocalStorage("user");
 };
