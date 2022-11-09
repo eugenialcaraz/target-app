@@ -1,4 +1,4 @@
-import { useRef, useEffect, EffectCallback } from "react";
+import { useRef, useEffect, EffectCallback, DependencyList } from "react";
 import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
 
@@ -32,7 +32,7 @@ function useDeepCompareMemoize(value) {
 
 export function useDeepCompareEffectForMaps(
   callback: EffectCallback,
-  dependencies: any[]
+  dependencies: DependencyList
 ) {
   useEffect(callback, dependencies.map(useDeepCompareMemoize));
 }

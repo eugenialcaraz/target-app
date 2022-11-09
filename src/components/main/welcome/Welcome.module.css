@@ -8,46 +8,44 @@
   margin-top: 5rem;
 }
 
-.container > div {
+.headlines {
   align-items: center;
 }
 
-.container > div > h1 {
+.headlines > h1 {
   font-size: 2rem;
   letter-spacing: 0.3rem;
   font-weight: 400;
   margin: 1.7rem auto;
 }
 
-.container > div > h1 > strong {
-  font-weight: 700;
-}
-
-.container > div > h2 {
+.headlines > h2 {
   font-size: 1.8rem;
   font-weight: 500;
 }
 
-.container > ul {
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
+.content {
+  padding: 0 1.1rem;
 }
 
-.container > ul > li {
+.contentItem {
   margin-bottom: 3rem;
 }
 
-.container > ul > li::marker {
+.contentItem::marker {
   content: url("@/assets/images/Bullet.svg");
   width: 0.3rem;
 }
 
-.container > ul > li > p {
+.contentItem > p {
   position: relative;
   left: 0.4rem;
 }
 
-.container > ul > li > p > strong {
-  letter-spacing: 0.21rem;
+.brandName {
   font-weight: 700;
+}
+
+.contentItem > p > .brandName {
+  letter-spacing: 0.21rem;
 }
