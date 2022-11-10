@@ -8,3 +8,7 @@
   border: 1.5px solid var(--error);
   max-width: 18.8rem;
 }
+
+.signUp {
+  width: 18.8rem;
+}

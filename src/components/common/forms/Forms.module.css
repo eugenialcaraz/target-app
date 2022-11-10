@@ -56,13 +56,3 @@
 .signUpForm > input[type="submit"] {
   margin-top: 1.6rem;
 }
-
-.signUpForm > div > input,
-.signUpForm > div > select {
-  max-width: 18rem;
-}
-
-.form > div > input,
-.form > div > select {
-  max-width: 18.8rem;
-}

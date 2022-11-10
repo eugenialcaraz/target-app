@@ -7,6 +7,7 @@ export const signInValidationSchema = yup
   .object({
     email: yup
       .string()
+      .email("Please enter a valid email")
       .max(64, "Please enter a valid email")
       .required(required),
     password: yup.string().required(required),
@@ -18,6 +19,7 @@ export const signUpValidationSchema = yup
     first_name: yup.string().required(required),
     email: yup
       .string()
+      .email("Please enter a valid email")
       .max(64, "Please enter a valid email")
       .required(required),
     password: yup
@@ -26,7 +28,7 @@ export const signUpValidationSchema = yup
       .required(required),
     password_confirmation: yup
       .string()
-      .min(6, "Password should be at least 6 characters long")
+      .oneOf([yup.ref("password"), null], "Passwords must match")
       .required(required),
     gender: yup.string().required(required),
   })
@@ -35,6 +37,7 @@ export const signUpValidationSchema = yup
 export const contactValidationSchema = yup.object({
   email: yup
     .string()
+    .email("Please enter a valid email")
     .max(64, "Please enter a valid email")
     .required(contactFormRequired),
   message: yup

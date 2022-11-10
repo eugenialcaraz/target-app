@@ -24,7 +24,7 @@ const ContactForm = () => {
   };
 
   const isFormValid = !isSubmitted || isValid;
-  const errorMessage = String(Object.values(errors)[0]?.message || "");
+  const errorMessage = String(Object.values(errors)[0]?.message ?? "");
 
   return (
     <form

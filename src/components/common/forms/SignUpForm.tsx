@@ -31,7 +31,7 @@ const SignUpForm = () => {
   } = useForm({ resolver });
 
   const isFormValid = !isSubmitted || isValid;
-  const errorMessage = String(Object.values(errors)[0]?.message || "");
+  const errorMessage = String(Object.values(errors)[0]?.message ?? "");
 
   const callGenders = async () => {
     dispatch(setGenders(await getGenders()));
