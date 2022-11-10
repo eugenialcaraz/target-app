@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
@@ -10,9 +9,8 @@ import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
 import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
-import { urlFormat, setLocalStorage } from "@/utils";
+import { urlFormat, setLocalStorage, sendEmail } from "@/utils";
 import { LocalStorageKeys, Pages } from "@/types";
-
 
 import styles from "./Forms.module.css";
 
@@ -58,12 +56,7 @@ const SignUpForm = () => {
       const { user } = await signUpRequest({ user: data });
       dispatch(setUser(user));
       setLocalStorage(LocalStorageKeys.username, user.name);
-      emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {},
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      sendEmail({});
       navigate(urlFormat(Pages.EmailConfirmation));
     } catch (error) {
       setError("serverError", {
