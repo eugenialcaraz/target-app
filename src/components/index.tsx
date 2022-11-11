@@ -6,3 +6,5 @@ export * from "./landing/emailConfirmation";
 export * from "./landing/newUser";
 export * from "./main/";
 export * from "./main/welcome";
+export * from "./main/map";
+export * from "./main/map/marker";
