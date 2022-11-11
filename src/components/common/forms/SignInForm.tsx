@@ -1,23 +1,25 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
 import { useNavigate } from "react-router-dom";
 
 import { Button, Input } from "@components/common";
 import { signInRequest } from "@/services";
 import { urlFormat, setLocalStorage } from "@/utils";
 import { Pages, LocalStorageKeys } from "@/types";
+import { useYupValidationResolver } from "@/hooks/formValidation";
+import { signInValidationSchema } from "@components/common";
 
 import styles from "./Forms.module.css";
 
 const SignInForm = () => {
+  const resolver = useYupValidationResolver(signInValidationSchema);
   const {
     register,
     handleSubmit,
     formState: { isSubmitted, isValid, errors },
     setError,
     clearErrors,
-  } = useForm();
+  } = useForm({ resolver });
   const navigate = useNavigate();
 
   const onSubmit = async (data: object) => {
@@ -36,15 +38,13 @@ const SignInForm = () => {
   };
 
   const isFormValid = !isSubmitted || isValid;
+  const errorMessage = String(Object.values(errors)[0]?.message ?? "");
 
   return (
     <form
       className={`${styles.form} flex-column`}
       onSubmit={handleSubmit(onSubmit)}>
-      <span className={isFormValid ? "" : styles.error}>
-        <ErrorMessage errors={errors} name="serverError" />
-        <ErrorMessage errors={errors} name={"email" && "password"} />
-      </span>
+      <span className={isFormValid ? "" : styles.error}>{errorMessage}</span>
       <Input
         label="email"
         name="email"
