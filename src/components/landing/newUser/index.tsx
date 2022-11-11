@@ -1,14 +1,16 @@
 import React from "react";
-import { useAppSelector } from "@/state/app/hooks";
+
 import { SignInForm } from "@components/common";
+import { getLocalStorage } from "@/utils";
+import { LocalStorageKeys } from "@/types";
 
 import styles from "./NewUser.module.css";
 
 const NewUser = () => {
-  const { user } = useAppSelector((state) => state.user);
+  const username = getLocalStorage(LocalStorageKeys.username);
   return (
     <div className={`${styles.container} flex-column`}>
-      <span>Hi, {user?.name}!</span>
+      <span>Hi, {username}!</span>
       <span>Welcome to</span>
       <span>TARGET</span>
       <SignInForm />

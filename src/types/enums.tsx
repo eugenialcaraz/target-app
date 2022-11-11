@@ -1,5 +1,6 @@
 export enum LocalStorageKeys {
   user = "user",
+  username = "username",
 }
 
 export enum Pages {

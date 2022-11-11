@@ -9,8 +9,8 @@ import { useAppSelector, useAppDispatch } from "@/state/app/hooks";
 import { setUser } from "@/state/features/user";
 import { Button, Input, Dropdown } from "@components/common";
 import { signUpRequest } from "@/services";
-import { urlFormat } from "@/utils";
-import { Pages } from "@/types";
+import { urlFormat, setLocalStorage, sendEmail } from "@/utils";
+import { LocalStorageKeys, Pages } from "@/types";
 
 import styles from "./Forms.module.css";
 
@@ -53,13 +53,11 @@ const SignUpForm = () => {
 
   const onSubmit = async (data: object) => {
     try {
-      const user = await signUpRequest({ user: data });
+      const { user } = await signUpRequest({ user: data });
       dispatch(setUser(user));
+      setLocalStorage(LocalStorageKeys.username, user.name);
+      sendEmail({});
       navigate(urlFormat(Pages.EmailConfirmation));
-      //TODO: add confirmation email instead of timeout
-      setTimeout(() => {
-        navigate(urlFormat(Pages.ConfirmationDone));
-      }, 1500);
     } catch (error) {
       setError("serverError", {
         type: "custom",
