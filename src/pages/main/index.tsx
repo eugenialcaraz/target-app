@@ -55,8 +55,8 @@ const Main = () => {
         <Wrapper apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
           <Map center={mapCenter} onClick={onClick}>
             <Marker position={mapCenter} icon={UserLocation} />
-            {targets.map((latLng, i) => (
-              <Marker key={i} position={latLng} />
+            {targets.map((latLng) => (
+              <Marker key={Number(latLng)} position={latLng} />
             ))}
           </Map>
         </Wrapper>
